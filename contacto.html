@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Materiales Chilavert</title>
+    <title>Contacto y Ubicación | Materiales Chilavert</title>
+    <meta name="description" content="Contactate con Materiales Chilavert en Villa Ballester. Teléfonos, WhatsApp, email y ubicación.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,6 +13,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
         }
         @media (max-width: 768px) {
             .contact-grid { grid-template-columns: 1fr; }
@@ -21,19 +23,38 @@
             color: white;
             padding: var(--space-lg);
             border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--color-accent);
         }
         .contact-info-card h3 {
-            margin-bottom: var(--space-md);
-            color: var(--color-accent);
+            margin-bottom: var(--space-lg);
+            color: var(--color-white);
+            font-size: 1.5rem;
         }
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
             margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .contact-item:last-child {
+            border-bottom: none;
         }
         .contact-item i {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            color: var(--color-accent);
+            margin-top: 3px;
+            width: 24px;
+            text-align: center;
+        }
+        .contact-item a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .contact-item a:hover {
             color: var(--color-accent);
         }
         .form-group {
@@ -43,17 +64,37 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            color: var(--color-primary);
         }
         .form-control {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.85rem;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-sm);
             font-family: inherit;
+            font-size: 1rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px var(--color-accent-subtle);
         }
         textarea.form-control {
             resize: vertical;
             min-height: 120px;
+        }
+        .map-section {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            margin-top: var(--space-lg);
+        }
+        .map-section iframe {
+            width: 100%;
+            height: 380px;
+            border: none;
+            display: block;
         }
     </style>
 </head>
@@ -72,7 +113,9 @@
                     <li><a href="contacto.html" style="color: var(--color-accent)">Contacto</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-whatsapp header-cta" id="header-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta%20comercial" class="btn btn-whatsapp header-cta" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Consultar
+            </a>
         </div>
     </header>
 
@@ -82,65 +125,91 @@
                 <h1 class="section-title">Hablemos de tu proyecto</h1>
                 <div class="contact-grid">
                     <div class="contact-form">
-                        <form onsubmit="event.preventDefault(); alert('Mensaje enviado. Nos pondremos en contacto a la brevedad.');">
+                        <form onsubmit="event.preventDefault(); alert('Mensaje recibido. Nos pondremos en contacto a la brevedad.');">
                             <div class="form-group">
-                                <label for="name">Nombre / Empresa</label>
-                                <input type="text" id="name" class="form-control" required>
+                                <label for="name">Nombre y Apellido / Empresa</label>
+                                <input type="text" id="name" class="form-control" placeholder="Ej: Juan Pérez" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" required>
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" class="form-control" placeholder="tuemail@ejemplo.com" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" class="form-control">
+                                <label for="phone">Teléfono / Celular</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Ej: 11 3948-0685">
                             </div>
                             <div class="form-group">
-                                <label for="message">Consulta</label>
-                                <textarea id="message" class="form-control" required></textarea>
+                                <label for="message">Detalle de Materiales o Consulta</label>
+                                <textarea id="message" class="form-control" placeholder="Escribinos los materiales que necesitás cotizar..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Consulta</button>
+                            <button type="submit" class="btn btn-accent" style="width: 100%; padding: 0.9rem; font-size: 1.05rem;">
+                                <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> Enviar Consulta
+                            </button>
                         </form>
                     </div>
                     
                     <div class="contact-info-card">
                         <h3>Información de Contacto</h3>
+                        
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
                             <div>
-                                <strong>Dirección:</strong><br>
-                                <span id="page-address">CONFIGURAR</span>
+                                <strong style="color: white;">Dirección:</strong><br>
+                                <span>Sargento Cabral 2861, Villa Ballester</span><br>
+                                <span style="font-size: 0.9rem; color: #94a3b8;">Provincia de Buenos Aires, Argentina</span>
                             </div>
                         </div>
+
                         <div class="contact-item">
-                            <i class="fa-brands fa-whatsapp"></i>
+                            <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
                             <div>
-                                <strong>WhatsApp:</strong><br>
-                                <span id="page-wa">CONFIGURAR</span>
+                                <strong style="color: white;">WhatsApp Oficial:</strong><br>
+                                <a href="https://wa.me/5491139480685" target="_blank" style="color: #4ade80; font-weight: bold; font-size: 1.1rem;">
+                                    +54 9 11 3948-0685
+                                </a>
+                                <br><span style="font-size: 0.85rem; color: #94a3b8;">Atención rápida de presupuestos y pedidos</span>
                             </div>
                         </div>
+
                         <div class="contact-item">
                             <i class="fa-solid fa-phone"></i>
                             <div>
-                                <strong>Teléfono:</strong><br>
-                                <span id="page-phone">CONFIGURAR</span>
+                                <strong style="color: white;">Teléfonos Fijos:</strong><br>
+                                <a href="tel:01147383008">4738-3008</a> &nbsp;|&nbsp; <a href="tel:01147684847">4768-4847</a>
                             </div>
                         </div>
+
                         <div class="contact-item">
                             <i class="fa-solid fa-envelope"></i>
                             <div>
-                                <strong>Email:</strong><br>
-                                <span id="page-email">CONFIGURAR</span>
+                                <strong style="color: white;">Email de Pedidos y Administración:</strong><br>
+                                <a href="mailto:pedidos@birchsa.com.ar">pedidos@birchsa.com.ar</a>
                             </div>
                         </div>
+
                         <div class="contact-item">
                             <i class="fa-solid fa-clock"></i>
                             <div>
-                                <strong>Horarios:</strong><br>
-                                <span id="page-schedule">CONFIGURAR</span>
+                                <strong style="color: white;">Horarios de Atención:</strong><br>
+                                <span>Lunes a Viernes: 8:00 a 17:30 hs</span><br>
+                                <span>Sábados: 8:00 a 13:00 hs</span>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Mapa de Ubicación -->
+                <div class="section-title" style="margin-top: 3rem;">
+                    <h2>Nuestra Ubicación</h2>
+                    <p style="color: var(--color-text-light);">Acercate a nuestro corralón en Villa Ballester para retirar materiales o coordinar tu entrega directa en obra.</p>
+                </div>
+                <div class="map-section">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Sargento+Cabral+2861,+Villa+Ballester,+Provincia+de+Buenos+Aires&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        loading="lazy" 
+                        allowfullscreen 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -149,7 +218,10 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h3 id="footer-brand"></h3><p id="footer-desc"></p></div>
+                <div class="footer-col">
+                    <h3 id="footer-brand">Materiales Chilavert</h3>
+                    <p id="footer-desc">Todo lo que necesitás para construir. Calidad, asesoramiento técnico y logística en obra.</p>
+                </div>
                 <div class="footer-col">
                     <h3>Navegación</h3>
                     <ul>
@@ -160,24 +232,28 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-col"><h3>Contacto</h3><ul id="footer-contact-list"></ul></div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul id="footer-contact-list">
+                        <li><i class="fa-solid fa-phone"></i> 4738-3008 / 4768-4847</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> +54 9 11 3948-0685</li>
+                        <li><i class="fa-solid fa-envelope"></i> pedidos@birchsa.com.ar</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Sargento Cabral 2861, Villa Ballester</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Materiales Chilavert. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-    <a href="#" class="fab-whatsapp" id="fab-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <!-- FAB WhatsApp -->
+    <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="fab-whatsapp" id="fab-whatsapp" target="_blank" title="Consultar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            if(typeof siteConfig !== "undefined") {
-                document.getElementById("page-address").textContent = siteConfig.contact.address;
-                document.getElementById("page-wa").textContent = siteConfig.contact.whatsapp;
-                document.getElementById("page-phone").textContent = siteConfig.contact.phone;
-                document.getElementById("page-email").textContent = siteConfig.contact.email;
-                document.getElementById("page-schedule").textContent = siteConfig.contact.schedule;
-            }
-        });
-    </script>
 </body>
 </html>

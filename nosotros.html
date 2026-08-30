@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros | Materiales Chilavert</title>
+    <meta name="description" content="Conocé la trayectoria y experiencia de Materiales Chilavert en Villa Ballester.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+        .about-card {
+            background: var(--color-bg-alt);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--color-accent);
+            margin-bottom: var(--space-md);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .stat-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -23,36 +67,54 @@
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-whatsapp header-cta" id="header-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="btn btn-whatsapp header-cta" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Consultar
+            </a>
         </div>
     </header>
 
     <main>
-        <section class="hero" style="background-color: var(--color-primary-dark); padding: 4rem 0;">
-            <div class="container text-center">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Materiales Chilavert</h1>
-                <p style="font-size: 1.2rem; color: var(--color-border); max-width: 600px; margin: 0 auto;">Experiencia, calidad y compromiso en materiales para la construcción.</p>
-            </div>
-        </section>
-
         <section class="section">
             <div class="container">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+                <h1 class="section-title">Sobre Materiales Chilavert</h1>
+                <div class="about-grid">
                     <div>
-                        <h2 style="color: var(--color-primary); font-size: 2rem; margin-bottom: 1rem;">Nuestra Empresa</h2>
-                        <p style="margin-bottom: 1rem; color: var(--color-text-main); font-size: 1.1rem;">Somos un corralón moderno enfocado en brindar soluciones integrales tanto para profesionales de la construcción (arquitectos, contratistas, empresas) como para particulares.</p>
-                        <p style="margin-bottom: 1rem; color: var(--color-text-main); font-size: 1.1rem;">Contamos con un amplio catálogo de productos estructurales, maderas, áridos, cementos y terminaciones, seleccionados por su calidad y rendimiento en obra.</p>
+                        <p class="mb-md" style="font-size: 1.15rem; line-height: 1.7;">
+                            En <strong>Materiales Chilavert</strong> nos especializamos en la comercialización y distribución integral de materiales de construcción gruesa y fina para profesionales, arquitectos, empresas constructoras y particulares.
+                        </p>
+                        <p class="mb-md" style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-light);">
+                            Ubicados estratégicamente en <strong>Sargento Cabral 2861, Villa Ballester</strong>, contamos con flota propia de camiones volcadores y grúas para asegurar entregas directas y puntuales en obra.
+                        </p>
                         
-                        <h3 style="color: var(--color-primary); margin-top: 2rem; margin-bottom: 1rem;">¿Por qué elegirnos?</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Asesoramiento especializado</li>
-                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Amplio stock permanente</li>
-                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Calculadora de materiales online</li>
-                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Atención personalizada por WhatsApp</li>
-                        </ul>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-number">+20</span>
+                                <span class="stat-label">Años de Trayectoria</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Marcas Oficiales</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">24/48h</span>
+                                <span class="stat-label">Entregas en Obra</span>
+                            </div>
+                        </div>
                     </div>
-                    <div style="background: var(--color-bg-alt); min-height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--color-text-light);">
-                        <i class="fa-solid fa-warehouse"></i>
+
+                    <div>
+                        <div class="about-card">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-truck-fast" style="color: var(--color-accent); margin-right: 8px;"></i> Logística y Flota Propia</h3>
+                            <p>Entregas en Villa Ballester, San Martín y toda la zona norte y oeste del Gran Buenos Aires con descarga en bolsón o a granel.</p>
+                        </div>
+                        <div class="about-card">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-calculator" style="color: var(--color-accent); margin-right: 8px;"></i> Asesoramiento y Cómputos</h3>
+                            <p>Te ayudamos a calcular los materiales exactos para tu estructura, muros, contrapisos y terminaciones para optimizar tu presupuesto.</p>
+                        </div>
+                        <div class="about-card">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-award" style="color: var(--color-accent); margin-right: 8px;"></i> Primeras Marcas</h3>
+                            <p>Distribuidores directos de Cementos Avellaneda, Calidra, Acindar, Weber Saint-Gobain y cerámicas Fanelli.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,7 +124,10 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h3 id="footer-brand"></h3><p id="footer-desc"></p></div>
+                <div class="footer-col">
+                    <h3 id="footer-brand">Materiales Chilavert</h3>
+                    <p id="footer-desc">Todo lo que necesitás para construir. Calidad y servicio.</p>
+                </div>
                 <div class="footer-col">
                     <h3>Navegación</h3>
                     <ul>
@@ -73,11 +138,26 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-col"><h3>Contacto</h3><ul id="footer-contact-list"></ul></div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul id="footer-contact-list">
+                        <li><i class="fa-solid fa-phone"></i> 4738-3008 / 4768-4847</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> +54 9 11 3948-0685</li>
+                        <li><i class="fa-solid fa-envelope"></i> pedidos@birchsa.com.ar</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Sargento Cabral 2861, Villa Ballester</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Materiales Chilavert. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-    <a href="#" class="fab-whatsapp" id="fab-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <!-- FAB WhatsApp -->
+    <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="fab-whatsapp" id="fab-whatsapp" target="_blank" title="Consultar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>
