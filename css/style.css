@@ -1,0 +1,426 @@
+/* CSS Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.btn-accent:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-whatsapp-hover);
+}
+
+/* Header */
+.site-header {
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-top: 4px solid var(--color-accent);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-accent);
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+/* Hero Section con Carrusel Vertical - Foto Expandida y Clara */
+.hero-slider-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 640px;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f172a;
+}
+
+.hero-slides-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s ease;
+}
+
+/* Sin fondo oscuro que tape la foto */
+.hero-slide::after {
+    display: none;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.hero-slide.prev {
+    opacity: 0;
+    transform: translateY(-100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: var(--color-white);
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    margin-bottom: var(--space-md);
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: -0.5px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #e2e8f0;
+    margin-bottom: var(--space-lg);
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Indicadores Verticales del Carrusel */
+.hero-slider-indicators {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.hero-indicator-dot.active {
+    background: var(--color-accent);
+    transform: scale(1.4);
+    height: 24px;
+    border-radius: 10px;
+}
+
+/* Sections */
+.section {
+    padding: var(--space-xl) 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+/* Cards Grid */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* Card */
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-img-placeholder {
+    height: 200px;
+    background-color: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-size: 3rem;
+}
+
+.card-body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
+}
+
+.card-desc {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+}
+
+/* Floating WhatsApp */
+.fab-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-whatsapp);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.fab-whatsapp:hover {
+    transform: scale(1.1);
+    background-color: var(--color-whatsapp-hover);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-border);
+    padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.footer-col h3 {
+    color: var(--color-white);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+}
+
+.footer-col ul li {
+    margin-bottom: var(--space-sm);
+}
+
+.footer-col a:hover {
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Mobile menu logic via JS */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--color-white);
+        box-shadow: var(--shadow-md);
+        padding: var(--space-md);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

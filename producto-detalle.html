@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto | Materiales Chilavert</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-detail-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            padding: var(--space-xl) 0;
+        }
+        @media (max-width: 768px) {
+            .product-detail-layout { grid-template-columns: 1fr; }
+        }
+        .product-gallery {
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-lg);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--color-text-light);
+            border: 1px solid var(--color-border);
+        }
+        .product-info-cat {
+            color: var(--color-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .product-info-title {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+        }
+        .product-info-desc {
+            font-size: 1.1rem;
+            color: var(--color-text-main);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .features-list { margin-bottom: var(--space-lg); }
+        .features-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-text-main);
+        }
+        .features-list i { color: var(--color-primary); }
+        .consult-box {
+            background: var(--color-bg-alt);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+        .consult-box h3 { margin-bottom: var(--space-md); color: var(--color-primary); }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html" style="color: var(--color-accent)">Productos</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container product-detail-layout" id="product-container">
+        <!-- Injected via JS -->
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h3 id="footer-brand"></h3><p id="footer-desc"></p></div>
+                <div class="footer-col">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="calculadora.html">Calculadora</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"><h3>Contacto</h3><ul id="footer-contact-list"></ul></div>
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="fab-whatsapp" id="fab-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get("id");
+            const container = document.getElementById("product-container");
+            
+            if(!productId || typeof catalogData === "undefined") {
+                container.innerHTML = "<h1>Producto no encontrado</h1><a href='productos.html' class='btn btn-primary'>Volver al catálogo</a>";
+                return;
+            }
+
+            const product = catalogData.products.find(p => p.id === productId);
+            if(!product) {
+                container.innerHTML = "<h1>Producto no encontrado</h1><a href='productos.html' class='btn btn-primary'>Volver al catálogo</a>";
+                return;
+            }
+
+            const category = catalogData.categories.find(c => c.id === product.category)?.name || "";
+            const waNumber = siteConfig.contact.whatsapp.replace(/\D/g, "");
+            const msg = encodeURIComponent(`Hola, me interesa el producto: ${product.name}`);
+            const waUrl = `https://wa.me/${waNumber}?text=${msg}`;
+            
+            let featuresHtml = "";
+            if(product.features) {
+                featuresHtml = `<ul class="features-list">
+                    ${product.features.map(f => `<li><i class="fa-solid fa-check"></i> ${f}</li>`).join("")}
+                    ${product.brand ? `<li><i class="fa-solid fa-tag"></i> Marca: <strong>${product.brand}</strong></li>` : ""}
+                </ul>`;
+            }
+
+            document.title = `${product.name} | Materiales Chilavert`;
+
+            container.innerHTML = `
+                <div class="product-gallery">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+                <div class="product-info">
+                    <span class="product-info-cat">${category}</span>
+                    <h1 class="product-info-title">${product.name}</h1>
+                    <p class="product-info-desc">${product.description}</p>
+                    
+                    ${featuresHtml}
+                    
+                    <div class="consult-box">
+                        <h3>¿Necesitás este producto?</h3>
+                        <p class="mb-md">Consultá disponibilidad y resolvemos tus dudas al instante.</p>
+                        <div style="display: flex; gap: 0.75rem; flex-direction: column;">
+                            <a href="${waUrl}" class="btn btn-whatsapp" style="width: 100%;">
+                                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar por WhatsApp
+                            </a>
+                            <a href="calculadora.html" class="btn btn-primary" style="width: 100%;">
+                                <i class="fa-solid fa-calculator" style="margin-right: 8px;"></i> Calcular cantidades en la Calculadora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

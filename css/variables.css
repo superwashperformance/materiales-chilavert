@@ -1,0 +1,40 @@
+:root {
+    /* Paleta Inspirada en la Imagen (Rojo Industrial / Cemento / Hormigón) */
+    --color-primary: #1e293b;       /* Carbón / Pizarra oscuro */
+    --color-primary-dark: #0f172a;  /* Negro asfalto profundo */
+    
+    /* Rojo Constructivo Vibrante (Cementos Avellaneda / Perfecto) */
+    --color-accent: #d90429;        /* Rojo insignia */
+    --color-accent-hover: #b8001f;  /* Rojo intenso hover */
+    --color-accent-subtle: #fee2e2; /* Fondo rojo suave */
+    
+    /* Neutros y Concreto */
+    --color-white: #ffffff;
+    --color-bg-light: #f8fafc;      /* Fondo base limpio */
+    --color-bg-alt: #f1f5f9;        /* Tono piedra / revoque claro */
+    --color-text-main: #1e293b;     /* Texto de alto contraste */
+    --color-text-light: #64748b;    /* Texto secundario */
+    --color-border: #e2e8f0;        /* Borde sutil */
+    
+    /* WhatsApp */
+    --color-whatsapp: #25D366;
+    --color-whatsapp-hover: #128C7E;
+
+    /* Tipografía */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    
+    /* Radios y Sombras */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.15), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Espaciados Base */
+    --container-max: 1200px;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+}

@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos | Materiales Chilavert</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .catalog-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--space-lg);
+            padding: var(--space-xl) 0;
+        }
+        @media (max-width: 768px) {
+            .catalog-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .sidebar {
+            background: var(--color-white);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            align-self: start;
+        }
+        .filter-title {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 0.5rem;
+        }
+        .category-list li {
+            margin-bottom: 0.5rem;
+        }
+        .category-list a {
+            color: var(--color-text-main);
+            transition: color 0.2s;
+            cursor: pointer;
+            display: block;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+        .category-list a:hover, .category-list a.active {
+            color: var(--color-accent);
+            background-color: var(--color-bg-alt);
+        }
+        .search-box {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-lg);
+        }
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-lg);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html" style="color: var(--color-accent)">Productos</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn btn-whatsapp header-cta" id="header-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+        </div>
+    </header>
+
+    <main class="container catalog-layout">
+        <aside class="sidebar">
+            <h2 class="filter-title">Buscar</h2>
+            <input type="text" id="search-input" class="search-box" placeholder="¿Qué estás buscando?">
+            
+            <h2 class="filter-title">Categorías</h2>
+            <ul class="category-list" id="category-filter-list">
+                <!-- Injected via JS -->
+            </ul>
+        </aside>
+
+        <section class="catalog-content">
+            <div class="catalog-header">
+                <h1 id="current-category-title" style="color: var(--color-primary);">Todos los Productos</h1>
+                <span id="product-count" style="color: var(--color-text-light);">0 resultados</span>
+            </div>
+            
+            <div class="grid-3" id="products-grid">
+                <!-- Products injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h3 id="footer-brand"></h3><p id="footer-desc"></p></div>
+                <div class="footer-col">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="calculadora.html">Calculadora</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"><h3>Contacto</h3><ul id="footer-contact-list"></ul></div>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="#" class="fab-whatsapp" id="fab-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>

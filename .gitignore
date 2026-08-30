@@ -1,0 +1,7 @@
+﻿# Dependencias y Temporales
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.system_generated/
+__pycache__/

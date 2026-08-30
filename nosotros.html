@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Materiales Chilavert</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="nosotros.html" style="color: var(--color-accent)">Nosotros</a></li>
+                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn btn-whatsapp header-cta" id="header-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="background-color: var(--color-primary-dark); padding: 4rem 0;">
+            <div class="container text-center">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Materiales Chilavert</h1>
+                <p style="font-size: 1.2rem; color: var(--color-border); max-width: 600px; margin: 0 auto;">Experiencia, calidad y compromiso en materiales para la construcción.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+                    <div>
+                        <h2 style="color: var(--color-primary); font-size: 2rem; margin-bottom: 1rem;">Nuestra Empresa</h2>
+                        <p style="margin-bottom: 1rem; color: var(--color-text-main); font-size: 1.1rem;">Somos un corralón moderno enfocado en brindar soluciones integrales tanto para profesionales de la construcción (arquitectos, contratistas, empresas) como para particulares.</p>
+                        <p style="margin-bottom: 1rem; color: var(--color-text-main); font-size: 1.1rem;">Contamos con un amplio catálogo de productos estructurales, maderas, áridos, cementos y terminaciones, seleccionados por su calidad y rendimiento en obra.</p>
+                        
+                        <h3 style="color: var(--color-primary); margin-top: 2rem; margin-bottom: 1rem;">¿Por qué elegirnos?</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Asesoramiento especializado</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Amplio stock permanente</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Calculadora de materiales online</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Atención personalizada por WhatsApp</li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--color-bg-alt); min-height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--color-text-light);">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h3 id="footer-brand"></h3><p id="footer-desc"></p></div>
+                <div class="footer-col">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="calculadora.html">Calculadora</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"><h3>Contacto</h3><ul id="footer-contact-list"></ul></div>
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="fab-whatsapp" id="fab-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

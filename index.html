@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Chilavert | Todo lo que necesitás para construir</title>
+    <meta name="description" content="Catálogo de materiales de construcción. Venta a profesionales y particulares.">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html" style="color: var(--color-accent)">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#" class="btn btn-whatsapp header-cta" id="header-whatsapp-btn">
+                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero con Carrusel Vertical -->
+        <section class="hero-slider-section" id="hero-slider">
+            <div class="hero-slides-wrapper" id="hero-slides-wrapper">
+                <div class="hero-slide active" style="background-image: url('img/hero-hierros.png');"></div>
+            </div>
+            
+            <div class="container hero-content">
+                <h1 id="hero-title">Todo lo que necesitás para construir</h1>
+                <p id="hero-subtitle">Materiales para obras, proyectos y profesionales. Calidad y experiencia al servicio de tu construcción.</p>
+                <div class="hero-actions">
+                    <a href="productos.html" class="btn btn-accent">Ver Productos</a>
+                    <a href="calculadora.html" class="btn btn-primary" style="border: 1px solid rgba(255,255,255,0.3);"><i class="fa-solid fa-calculator" style="margin-right:8px;"></i> Calculadora de Obra</a>
+                    <a href="#" class="btn btn-whatsapp" id="hero-whatsapp-btn"><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Indicadores verticales para cuando se agreguen más imágenes -->
+            <div class="hero-slider-indicators" id="hero-slider-indicators"></div>
+        </section>
+
+        <!-- Categorías -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Explorá Nuestros Productos</h2>
+                <div class="grid-4" id="categories-grid">
+                    <!-- Categories injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner Promocional Calculadora -->
+        <section class="section" style="background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%); color: white; padding: 3.5rem 0;">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="max-width: 650px;">
+                    <span style="color: var(--color-accent); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Herramienta Exclusiva para Profesionales y Particulares</span>
+                    <h2 style="font-size: 2.2rem; color: white; margin: 0.5rem 0 1rem 0;">Calculá los materiales exactos para tu obra</h2>
+                    <p style="color: #cbd5e1; font-size: 1.1rem; margin: 0;">Obtené cómputos métricos de mampostería, contrapisos, revoques, hormigón y armaduras con dosificaciones técnicas reales y presupuesto consolidado.</p>
+                </div>
+                <div>
+                    <a href="calculadora.html" class="btn btn-accent" style="padding: 1rem 2rem; font-size: 1.1rem; box-shadow: var(--shadow-lg);">
+                        <i class="fa-solid fa-calculator" style="margin-right: 10px;"></i> Ir a la Calculadora Online &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos Destacados -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Productos Destacados</h2>
+                <div class="grid-3" id="featured-grid">
+                    <!-- Products injected by JS -->
+                </div>
+                <div class="text-center mt-md" style="margin-top: 2rem;">
+                    <a href="productos.html" class="btn btn-primary">Ver catálogo completo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nosotros Snippet -->
+        <section class="section hero" style="background-color: var(--color-primary-dark);">
+            <div class="container text-center">
+                <h2 class="section-title" style="color: white;">Soluciones para Profesionales y Obras</h2>
+                <p style="color: var(--color-border); max-width: 800px; margin: 0 auto 2rem;">
+                    Brindamos asesoramiento, variedad de materiales y atención personalizada. Resolvemos las necesidades de arquitectos, constructores y empresas.
+                </p>
+                <a href="nosotros.html" class="btn btn-accent">Conocer más sobre nosotros</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 id="footer-brand">Materiales Chilavert</h3>
+                    <p id="footer-desc">Todo lo que necesitás para construir. Calidad y servicio.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="calculadora.html">Calculadora</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul id="footer-contact-list">
+                        <!-- Contact injected by JS -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Materiales Chilavert. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WhatsApp -->
+    <a href="#" class="fab-whatsapp" id="fab-whatsapp" title="Consultar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
