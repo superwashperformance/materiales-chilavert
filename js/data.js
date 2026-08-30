@@ -249,6 +249,15 @@ const catalogData = {
             features: ["Bolsa 25 kg", "Norma IRAM 45062 Tipo C3-I", "Apto losa radiante y porcelanatos grandes"] 
         },
         { 
+            id: "11105", 
+            category: "adhesivos", 
+            name: "Perfecto Adhesivo Porcellanato 30 kg", 
+            image: "img/products/adhesivo-perfecto-porcellanato.jpg", 
+            description: "Mezcla adhesiva de alta performance formulada especialmente para la colocación de placas de porcellanato y piezas de baja absorción.", 
+            brand: "Cementos Avellaneda", 
+            features: ["Bolsa 30 kg", "Norma IRAM 45062 Tipo C2-L,F,H", "Especial Porcellanatos"] 
+        },
+        { 
             id: "11200", 
             category: "adhesivos", 
             name: "Pastina Fluida Impermeable Weber / Perfecto", 
