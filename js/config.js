@@ -11,6 +11,7 @@ const siteConfig = {
         whatsappRaw: "5491139480685",
         email: "pedidos@birchsa.com.ar",
         address: "Sargento Cabral 2861, Villa Ballester, Provincia de Buenos Aires, Argentina",
+        mapsUrl: "https://maps.app.goo.gl/w4umrVT5Yy7J9oC59",
         schedule: "Lunes a Viernes: 7:30 a 12:00 hs y 13:30 a 17:30 hs | Sábados: 7:30 a 12:30 hs"
     },
     social: {
