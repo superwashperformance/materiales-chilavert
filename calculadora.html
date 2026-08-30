@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Profesional de Materiales | Materiales Chilavert</title>
-    <meta name="description" content="Calculá de forma rápida y precisa los materiales para tu obra. Cómputo métrico y presupuesto de mampostería, hormigón, contrapisos, revoques y pintura.">
+    <title>Calculadora de Materiales | Materiales Chilavert</title>
+    <meta name="description" content="Calculá con exactitud los materiales para tus muros, contrapisos, revoques, hormigón y pisos con cotización directa por WhatsApp.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/calculator.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <header class="site-header">
+    <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
             
@@ -41,195 +41,83 @@
         </div>
     </header>
 
-    <main class="calc-container container">
-        <!-- Header de Seccion -->
+    <main class="calc-container">
         <div class="calc-header">
             <h1>Calculadora de Materiales</h1>
-            <p>Calculá de forma rápida y precisa los materiales necesarios para tu obra con dosificaciones normalizadas y cómputo de compra real.</p>
+            <p>Ingresá las medidas de tu proyecto y obtené al instante la lista de materiales necesarios para tu obra.</p>
         </div>
 
-        <!-- Stepper Wizard -->
-        <div class="calc-stepper no-print">
-            <div class="step-item active" data-step="1">
-                <div class="step-circle">1</div>
-                <div class="step-label">Obra</div>
+        <div class="calc-grid">
+            <!-- Formulario de Entrada -->
+            <div class="calc-card">
+                <h3 class="calc-card-title">
+                    <i class="fa-solid fa-ruler-combined" style="color: var(--color-accent);"></i> 1. Tipo de Trabajo y Medidas
+                </h3>
+
+                <div class="calc-form-group">
+                    <label for="calc-category">Rubro / Elemento Constructivo</label>
+                    <select id="calc-category">
+                        <option value="muros">Mampostería y Paredes</option>
+                        <option value="contrapisos">Contrapisos y Carpetas</option>
+                        <option value="revoques">Revoques e Impermeabilizaciones</option>
+                        <option value="hormigon">Hormigón Estructural (H-21)</option>
+                        <option value="pisos">Colocación de Pisos y Porcelanatos</option>
+                    </select>
+                </div>
+
+                <div class="calc-form-group">
+                    <label for="calc-item">Tipo de Material / Especificación</label>
+                    <select id="calc-item"></select>
+                </div>
+
+                <div class="calc-dim-row">
+                    <div class="calc-form-group">
+                        <label for="calc-length">Largo Total (m)</label>
+                        <input type="number" id="calc-length" value="10" min="0.1" step="0.1">
+                    </div>
+                    <div class="calc-form-group">
+                        <label for="calc-height" id="dim-height-label">Alto / Altura (m)</label>
+                        <input type="number" id="calc-height" value="2.6" min="0.1" step="0.1">
+                    </div>
+                </div>
+
+                <div class="calc-form-group" id="dim-thickness-group" style="display: none;">
+                    <label for="calc-thickness">Espesor (cm)</label>
+                    <input type="number" id="calc-thickness" value="10" min="1" step="0.5">
+                </div>
             </div>
-            <div class="step-item" data-step="2">
-                <div class="step-circle">2</div>
-                <div class="step-label">Categoría</div>
-            </div>
-            <div class="step-item" data-step="3">
-                <div class="step-circle">3</div>
-                <div class="step-label">Medidas</div>
-            </div>
-            <div class="step-item" data-step="4">
-                <div class="step-circle">4</div>
-                <div class="step-label">Resultados</div>
-            </div>
-            <div class="step-item" data-step="5">
-                <div class="step-circle">5</div>
-                <div class="step-label">Presupuesto</div>
+
+            <!-- Resultados y Envío por WhatsApp -->
+            <div class="calc-results-card">
+                <h3 class="calc-card-title">
+                    <i class="fa-solid fa-clipboard-list" style="color: var(--color-accent);"></i> 2. Materiales Calculados
+                </h3>
+
+                <div class="calc-summary-badge" id="calc-summary-badge">
+                    Superficie: 26.00 m²
+                </div>
+
+                <div class="calc-table-wrapper">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Cantidad Necesaria</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calc-results-tbody">
+                            <!-- Inyectado por JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <a href="#" class="btn-calc-whatsapp" id="calc-whatsapp-btn" target="_blank">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Solicitar Cotización por WhatsApp
+                </a>
             </div>
         </div>
-
-        <!-- PASO 1: Datos de la Obra -->
-        <section class="calc-step-panel active" data-step="1">
-            <div class="calc-card" style="max-width: 760px; margin: 0 auto;">
-                <h3 class="calc-card-title"><i class="fa-solid fa-folder-plus"></i> Paso 1: Datos de la Obra / Proyecto</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="work-name">Nombre / Referencia de la Obra *</label>
-                        <input type="text" id="work-name" class="form-control" placeholder="Ej: Vivienda Unifamiliar Lote 42" value="Vivienda Principal" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="work-client">Cliente / Comitente</label>
-                        <input type="text" id="work-client" class="form-control" placeholder="Ej: Arq. Rossi / Particular">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="work-location">Ubicación / Ciudad</label>
-                        <input type="text" id="work-location" class="form-control" placeholder="Ej: San Martín / Villa Ballester">
-                    </div>
-                    <div class="form-group">
-                        <label for="work-date">Fecha</label>
-                        <input type="date" id="work-date" class="form-control">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="work-area">Superficie Total Estimada (m²)</label>
-                        <div class="input-with-unit">
-                            <input type="number" id="work-area" placeholder="120">
-                            <span class="input-unit-badge">m²</span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="work-floors">Plantas / Niveles</label>
-                        <input type="number" id="work-floors" class="form-control" value="1" min="1" max="10">
-                    </div>
-                </div>
-                <div class="form-group mb-lg">
-                    <label for="work-notes">Observaciones Generales</label>
-                    <textarea id="work-notes" class="form-control" rows="2" placeholder="Notas sobre accesibilidad de camión, acopio o particularidades..."></textarea>
-                </div>
-
-                <div class="calc-nav-actions" style="justify-content: flex-end;">
-                    <button type="button" class="btn btn-accent" data-action="next-step">
-                        Comenzar Cálculo <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- PASO 2: Seleccion de Modulo Constructivo -->
-        <section class="calc-step-panel" data-step="2">
-            <h2 class="section-title">Paso 2: ¿Qué rubro deseás calcular?</h2>
-            <div class="module-grid">
-                <div class="module-card selected" data-module="muros">
-                    <i class="fa-solid fa-border-all module-icon"></i>
-                    <div class="module-title">Muros y Mamposterías</div>
-                    <div class="module-desc">Ladrillos huecos, comunes, portantes, Retak y bloques con mortero y revoque.</div>
-                </div>
-                <div class="module-card" data-module="pisos">
-                    <i class="fa-solid fa-table-cells module-icon"></i>
-                    <div class="module-title">Pisos y Revestimientos</div>
-                    <div class="module-desc">Porcelanatos y cerámicas, cálculo de cajas, bolsas de adhesivo y pastina.</div>
-                </div>
-                <div class="module-card" data-module="contrapisos">
-                    <i class="fa-solid fa-trowel module-icon"></i>
-                    <div class="module-title">Contrapisos</div>
-                    <div class="module-desc">Contrapisos de cascote o piedra granza, cómputo de cemento, cal y áridos.</div>
-                </div>
-                <div class="module-card" data-module="carpetas">
-                    <i class="fa-solid fa-layer-group module-icon"></i>
-                    <div class="module-title">Carpetas de Nivelación</div>
-                    <div class="module-desc">Dosificación 1:3 para asiento de pisos, espesores y metros de arena y cemento.</div>
-                </div>
-                <div class="module-card" data-module="pintura">
-                    <i class="fa-solid fa-paint-roller module-icon"></i>
-                    <div class="module-title">Pintura y Terminaciones</div>
-                    <div class="module-desc">Látex exterior e interior, fijador sellador y cálculo de envases comerciales.</div>
-                </div>
-                <div class="module-card" data-module="hormigon">
-                    <i class="fa-solid fa-monument module-icon"></i>
-                    <div class="module-title">Hormigón Estructural</div>
-                    <div class="module-desc">Columnas, vigas, losas, plateas y bases H-21 con acero y encofrado estimado.</div>
-                </div>
-                <div class="module-card" data-module="acero">
-                    <i class="fa-solid fa-bars-staggered module-icon"></i>
-                    <div class="module-title">Hierros y Armaduras</div>
-                    <div class="module-desc">Planilla de despiece de barras ADN 420 (6mm a 25mm), metros y kilos.</div>
-                </div>
-            </div>
-
-            <div class="calc-nav-actions">
-                <button type="button" class="btn btn-primary" data-action="prev-step">
-                    <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Volver a Datos de Obra
-                </button>
-            </div>
-        </section>
-
-        <!-- PASO 3: Formulario de Medidas y Materiales -->
-        <section class="calc-step-panel" data-step="3">
-            <h2 class="section-title">Paso 3: Ingresá las medidas y especificaciones</h2>
-            
-            <div class="calc-form-layout" id="module-form-container">
-                <!-- Se inyecta dinamicamente segun el modulo seleccionado -->
-            </div>
-
-            <div class="calc-nav-actions">
-                <button type="button" class="btn btn-primary" data-action="prev-step">
-                    <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Cambiar Rubro
-                </button>
-                <button type="button" class="btn btn-accent" data-action="next-step">
-                    Calcular Materiales <i class="fa-solid fa-calculator" style="margin-left: 8px;"></i>
-                </button>
-            </div>
-        </section>
-
-        <!-- PASO 4: Resultados y Auditoria -->
-        <section class="calc-step-panel" data-step="4">
-            <h2 class="section-title">Paso 4: Resultados del Cálculo</h2>
-            
-            <div id="results-view-container">
-                <!-- Inyectado dinamicamente -->
-            </div>
-
-            <div class="calc-nav-actions">
-                <button type="button" class="btn btn-primary" data-action="prev-step">
-                    <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Ajustar Medidas
-                </button>
-                <button type="button" class="btn btn-accent" data-action="next-step">
-                    Ver Presupuesto Consolidado <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-                </button>
-            </div>
-        </section>
-
-        <!-- PASO 5: Presupuesto Maestro y Cotizacion -->
-        <section class="calc-step-panel" data-step="5">
-            <h2 class="section-title">Paso 5: Presupuesto Maestro Consolidado</h2>
-            
-            <div id="master-budget-container">
-                <!-- Inyectado dinamicamente -->
-            </div>
-        </section>
     </main>
 
-    <!-- Modal de Transparencia y Memoria de Calculo -->
-    <div class="calc-modal-backdrop" id="calc-trace-modal">
-        <div class="calc-modal">
-            <div class="modal-header">
-                <h3 style="margin: 0; color: var(--color-primary);"><i class="fa-solid fa-calculator"></i> Memoria de Cálculo y Fórmulas</h3>
-                <button type="button" id="close-trace-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text-light);">&times;</button>
-            </div>
-            <div id="trace-modal-content">
-                <!-- Pasos de calculo inyectados -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -270,16 +158,14 @@
     </footer>
 
     <!-- FAB WhatsApp -->
-    <a href="#" class="fab-whatsapp" id="fab-whatsapp" title="Consultar por WhatsApp">
+    <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="fab-whatsapp" id="fab-whatsapp" target="_blank" title="Consultar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts en orden de dependencia -->
+    <!-- Scripts -->
     <script src="js/config.js"></script>
-    <script src="js/data.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/calculator-engine.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/calculator-ui.js"></script>
 </body>
 </html>
