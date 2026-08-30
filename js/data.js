@@ -45,8 +45,9 @@ const catalogData = {
         { 
             id: "pinturas", 
             name: "Pinturas y Revestimientos", 
+            image: "img/categories/cat-pinturas.jpg", 
             icon: "fa-paint-roller", 
-            description: "Látex exterior e interior, fijadores selladores y enduidos." 
+            description: "Línea Weberpint Látex Exterior-Interior (4kg, 10kg, 20L), fijadores y selladores." 
         }
     ],
 
@@ -222,10 +223,10 @@ const catalogData = {
             id: "09011", 
             category: "hierros", 
             name: "Malla Sima Electrosoldada R-084 / Q-188", 
-            image: "img/categories/cat-hierros.png", 
-            description: "Malla de acero para losas, plateas de fundación y pisos industriales.", 
+            image: "img/products/malla-sima.png", 
+            description: "Malla de acero electrosoldada para losas, plateas de fundación y contrapisos armados.", 
             brand: "Acindar", 
-            features: ["Panel 2 x 5 mts", "Hierro torsionado", "Alta resistencia"] 
+            features: ["Panel 2 x 5 mts", "Malla electrosoldada", "Alta resistencia mecánica"] 
         },
 
         // ADHESIVOS Y PASTINAS
@@ -314,18 +315,20 @@ const catalogData = {
         { 
             id: "14100", 
             category: "pinturas", 
-            name: "Látex Exterior Profesional 20 L", 
-            description: "Pintura al látex acrílica para muros exteriores con alta resistencia a la intemperie y rayos UV.", 
-            brand: "Tersuave / Alba / Sinteplast", 
-            features: ["Balde 20 Litros", "Lavable", "Anti-hongos"] 
+            name: "Weberpint Látex Exterior-Interior 20 L", 
+            image: "img/products/weberpint-latex.jpg", 
+            description: "Pintura látex acrílica de máxima cobertura, alta blancura y resistencia a la intemperie.", 
+            brand: "Weber / Saint-Gobain", 
+            features: ["Balde 20 Litros", "Exterior e Interior", "Excelente poder cubritivo"] 
         },
         { 
             id: "14105", 
             category: "pinturas", 
-            name: "Látex Interior Lavable 20 L", 
-            description: "Látex para interiores de excelente poder cubritivo y acabado mate aterciopelado.", 
-            brand: "Tersuave / Alba / Sinteplast", 
-            features: ["Balde 20 Litros", "Alto poder cubritivo", "Fácil aplicación"] 
+            name: "Weberpint Látex Exterior-Interior 10 kg / 4 kg", 
+            image: "img/products/weberpint-latex.jpg", 
+            description: "Látex para muros exteriores e interiores en presentaciones medianas y chicas.", 
+            brand: "Weber / Saint-Gobain", 
+            features: ["Balde 10 kg / Pote 4 kg", "Lavable y anti-hongos", "Fácil aplicación"] 
         },
         { 
             id: "14120", 
