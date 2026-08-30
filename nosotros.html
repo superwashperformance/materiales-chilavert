@@ -7,6 +7,7 @@
     <meta name="description" content="Conocé la trayectoria y experiencia de Materiales Chilavert en Villa Ballester.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .about-grid {
@@ -63,13 +64,18 @@
                     <li><a href="productos.html">Productos</a></li>
                     <li><a href="calculadora.html">Calculadora</a></li>
                     <li><a href="nosotros.html" style="color: var(--color-accent)">Nosotros</a></li>
-                    <li><a href="obras.html">Obras</a></li>
+                    
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
-            <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="btn btn-whatsapp header-cta" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Consultar
-            </a>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="btn-cart-nav" id="cart-nav-btn" title="Ver carrito de cotización">
+                    <i class="fa-solid fa-cart-shopping"></i> <span class="hide-mobile">Cotización</span> <span class="cart-badge">0</span>
+                </button>
+                <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta%20comercial" class="btn btn-whatsapp header-cta" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> <span class="hide-mobile">Consultar</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -160,6 +166,7 @@
     </a>
 
     <script src="js/config.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

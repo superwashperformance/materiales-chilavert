@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos | Materiales Chilavert</title>
+    <meta name="description" content="Catálogo completo de materiales de construcción. Cemento, cales, áridos, ladrillos, hierros, adhesivos e impermeabilizantes.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .catalog-layout {
             display: grid;
-            grid-template-columns: 250px 1fr;
+            grid-template-columns: 260px 1fr;
             gap: var(--space-lg);
-            padding: var(--space-xl) 0;
+            margin-top: var(--space-lg);
         }
         @media (max-width: 768px) {
             .catalog-layout {
@@ -24,91 +26,129 @@
             padding: var(--space-md);
             border-radius: var(--radius-md);
             border: 1px solid var(--color-border);
-            align-self: start;
+            height: fit-content;
         }
-        .filter-title {
-            font-size: 1.2rem;
-            margin-bottom: var(--space-md);
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
             color: var(--color-primary);
-            border-bottom: 2px solid var(--color-border);
-            padding-bottom: 0.5rem;
+        }
+        .category-list {
+            list-style: none;
         }
         .category-list li {
             margin-bottom: 0.5rem;
         }
         .category-list a {
-            color: var(--color-text-main);
-            transition: color 0.2s;
-            cursor: pointer;
             display: block;
             padding: 0.5rem;
+            color: var(--color-text-main);
             border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
         }
-        .category-list a:hover, .category-list a.active {
-            color: var(--color-accent);
-            background-color: var(--color-bg-alt);
+        .category-list a:hover,
+        .category-list a.active {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
         }
-        .search-box {
+        .search-bar {
+            margin-bottom: var(--space-lg);
+        }
+        .search-bar input {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.75rem 1rem;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-md);
-            margin-bottom: var(--space-lg);
+            font-size: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--color-accent);
         }
         .catalog-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-md);
         }
     </style>
 </head>
 <body>
+
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
-            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
             <nav class="main-nav" id="main-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="productos.html" style="color: var(--color-accent)">Productos</a></li>
                     <li><a href="calculadora.html">Calculadora</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="obras.html">Obras</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-whatsapp header-cta" id="header-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="btn-cart-nav" id="cart-nav-btn" title="Ver carrito de cotización">
+                    <i class="fa-solid fa-cart-shopping"></i> <span class="hide-mobile">Cotización</span> <span class="cart-badge">0</span>
+                </button>
+                <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta%20comercial" class="btn btn-whatsapp header-cta" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> <span class="hide-mobile">Consultar</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="container catalog-layout">
-        <aside class="sidebar">
-            <h2 class="filter-title">Buscar</h2>
-            <input type="text" id="search-input" class="search-box" placeholder="¿Qué estás buscando?">
-            
-            <h2 class="filter-title">Categorías</h2>
-            <ul class="category-list" id="category-filter-list">
-                <!-- Injected via JS -->
-            </ul>
-        </aside>
+    <main class="section bg-light">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar materiales por nombre, marca o aplicación (ej: Cemento, Cal, Weber, Ladrillo, Arena, Malla...)">
+            </div>
 
-        <section class="catalog-content">
-            <div class="catalog-header">
-                <h1 id="current-category-title" style="color: var(--color-primary);">Todos los Productos</h1>
-                <span id="product-count" style="color: var(--color-text-light);">0 resultados</span>
+            <div class="catalog-layout">
+                <!-- Sidebar Categorías -->
+                <aside class="sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <ul class="category-list" id="category-filter-list">
+                        <!-- Categories injected by JS -->
+                    </ul>
+                </aside>
+
+                <!-- Grid Productos -->
+                <section>
+                    <div class="catalog-header">
+                        <h2 id="current-category-title">Todos los Productos</h2>
+                        <span id="product-count" style="color: var(--color-text-light); font-weight: 500;"></span>
+                    </div>
+
+                    <div class="grid-3" id="products-grid">
+                        <!-- Products injected by JS -->
+                    </div>
+                </section>
             </div>
-            
-            <div class="grid-3" id="products-grid">
-                <!-- Products injected via JS -->
-            </div>
-        </section>
+        </div>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h3 id="footer-brand"></h3><p id="footer-desc"></p></div>
+                <div class="footer-col">
+                    <h3 id="footer-brand">Materiales Chilavert</h3>
+                    <p id="footer-desc">Todo lo que necesitás para construir. Calidad y servicio.</p>
+                </div>
                 <div class="footer-col">
                     <h3>Navegación</h3>
                     <ul>
@@ -119,16 +159,32 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-col"><h3>Contacto</h3><ul id="footer-contact-list"></ul></div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul id="footer-contact-list">
+                        <li><i class="fa-solid fa-phone"></i> 4738-3008 / 4768-4847</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> +54 9 11 3948-0685</li>
+                        <li><i class="fa-solid fa-envelope"></i> pedidos@birchsa.com.ar</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Sargento Cabral 2861, Villa Ballester</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Materiales Chilavert. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-    
-    <a href="#" class="fab-whatsapp" id="fab-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
 
+    <!-- FAB WhatsApp -->
+    <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="fab-whatsapp" id="fab-whatsapp" target="_blank" title="Consultar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
     <script src="js/config.js"></script>
     <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/catalog.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

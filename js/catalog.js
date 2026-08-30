@@ -13,7 +13,7 @@
     let searchQuery = "";
 
     // WhatsApp base URL from config
-    const waNumber = (typeof siteConfig !== "undefined" && siteConfig.contact.whatsapp) ? siteConfig.contact.whatsapp.replace(/\D/g, "") : "";
+    const waNumber = (typeof siteConfig !== "undefined" && siteConfig.contact.whatsappRaw) ? siteConfig.contact.whatsappRaw : "5491139480685";
     const waBaseUrl = `https://wa.me/${waNumber}?text=`;
 
     // Render Sidebar Categories
@@ -64,11 +64,11 @@
         countLabel.textContent = `${filtered.length} productos`;
 
         if (filtered.length === 0) {
-            productsGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 2rem;">No se encontraron productos.</div>`;
+            productsGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 2rem;">No se encontraron productos en esta categoría.</div>`;
             return;
         }
 
-        // Render HTML mostrando la foto específica del producto primero
+        // Render HTML mostrando la foto específica del producto y botón de agregar al carrito
         productsGrid.innerHTML = filtered.map(prod => {
             const catObj = catalogData.categories.find(c => c.id === prod.category);
             const catName = catObj ? catObj.name : "";
@@ -76,7 +76,7 @@
             const prodImg = prodImgSrc 
                 ? `<div class="card-img-wrapper"><img src="${prodImgSrc}" alt="${prod.name}" loading="lazy"></div>` 
                 : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
-            const msg = encodeURIComponent(`Hola, me interesa el producto: ${prod.name}`);
+            const msg = encodeURIComponent(`Hola, me interesa consultar por el producto: ${prod.name}`);
             return `
             <div class="card">
                 ${prodImg}
@@ -84,9 +84,15 @@
                     <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: bold; text-transform: uppercase;">${catName}</span>
                     <h3 class="card-title">${prod.name}</h3>
                     <p class="card-desc">${prod.description}</p>
-                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                        <a href="producto-detalle.html?id=${prod.id}" class="btn btn-primary" style="flex: 1; padding: 0.5rem; font-size: 0.9rem;">Ver</a>
-                        <a href="${waBaseUrl}${msg}" class="btn btn-whatsapp" style="flex: 1; padding: 0.5rem; font-size: 0.9rem;">Consultar</a>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                        <button class="btn btn-accent" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;" onclick="CartManager.addItem('${prod.id}', 1)">
+                            <i class="fa-solid fa-cart-plus" style="margin-right: 6px;"></i> Agregar a Cotización
+                        </button>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <a href="producto-detalle.html?id=${prod.id}" class="btn btn-primary" style="flex: 1; padding: 0.45rem; font-size: 0.85rem; text-align: center;">Ver Detalle</a>
+                            <a href="${waBaseUrl}${msg}" class="btn btn-whatsapp" style="flex: 1; padding: 0.45rem; font-size: 0.85rem; text-align: center;" target="_blank"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                        </div>
                     </div>
                 </div>
             </div>

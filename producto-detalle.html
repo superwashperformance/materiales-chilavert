@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Producto | Materiales Chilavert</title>
+    <meta name="description" content="Detalle técnico y cotización de materiales de construcción en Materiales Chilavert.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .product-detail-layout {
@@ -48,7 +50,7 @@
             display: block;
         }
         .product-info-title {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--color-primary);
             line-height: 1.2;
             margin-bottom: var(--space-md);
@@ -77,6 +79,39 @@
             text-align: center;
         }
         .consult-box h3 { margin-bottom: var(--space-md); color: var(--color-primary); }
+        
+        .detail-qty-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+        .detail-qty-control {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            background: white;
+        }
+        .detail-qty-control button {
+            background: transparent;
+            border: none;
+            width: 38px;
+            height: 38px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--color-primary);
+        }
+        .detail-qty-control input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
     </style>
 </head>
 <body>
@@ -90,10 +125,17 @@
                     <li><a href="productos.html" style="color: var(--color-accent)">Productos</a></li>
                     <li><a href="calculadora.html">Calculadora</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="obras.html">Obras</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="btn-cart-nav" id="cart-nav-btn" title="Ver carrito de cotización">
+                    <i class="fa-solid fa-cart-shopping"></i> <span class="hide-mobile">Cotización</span> <span class="cart-badge">0</span>
+                </button>
+                <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="btn btn-whatsapp header-cta" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> <span class="hide-mobile">Consultar</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -119,10 +161,11 @@
             </div>
         </div>
     </footer>
-    <a href="#" class="fab-whatsapp" id="fab-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/5491139480685" class="fab-whatsapp" id="fab-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
     <script src="js/config.js"></script>
     <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -142,8 +185,8 @@
             }
 
             const category = catalogData.categories.find(c => c.id === product.category)?.name || "";
-            const waNumber = (typeof siteConfig !== "undefined" && siteConfig.contact.whatsapp) ? siteConfig.contact.whatsapp.replace(/\D/g, "") : "";
-            const msg = encodeURIComponent(`Hola, me interesa el producto: ${product.name}`);
+            const waNumber = (typeof siteConfig !== "undefined" && siteConfig.contact.whatsappRaw) ? siteConfig.contact.whatsappRaw : "5491139480685";
+            const msg = encodeURIComponent(`Hola, me interesa consultar por el producto: ${product.name}`);
             const waUrl = `https://wa.me/${waNumber}?text=${msg}`;
             
             let featuresHtml = "";
@@ -171,10 +214,23 @@
                     
                     <div class="consult-box">
                         <h3>¿Necesitás este producto?</h3>
-                        <p class="mb-md">Consultá disponibilidad y resolvemos tus dudas al instante.</p>
+                        <p class="mb-md">Agregalo a tu cotización o consultanos directamente por WhatsApp.</p>
+                        
+                        <div class="detail-qty-wrapper">
+                            <label style="font-weight: 600;">Cantidad:</label>
+                            <div class="detail-qty-control">
+                                <button onclick="let inp = document.getElementById('detail-qty-input'); if(parseInt(inp.value)>1) inp.value=parseInt(inp.value)-1;">-</button>
+                                <input type="text" id="detail-qty-input" value="1" readonly>
+                                <button onclick="let inp = document.getElementById('detail-qty-input'); inp.value=parseInt(inp.value)+1;">+</button>
+                            </div>
+                        </div>
+
                         <div style="display: flex; gap: 0.75rem; flex-direction: column;">
-                            <a href="${waUrl}" class="btn btn-whatsapp" style="width: 100%;">
-                                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar por WhatsApp
+                            <button class="btn btn-accent" style="width: 100%; padding: 0.9rem; font-size: 1.05rem;" onclick="CartManager.addItem('${product.id}', parseInt(document.getElementById('detail-qty-input').value)); CartManager.openDrawer();">
+                                <i class="fa-solid fa-cart-plus" style="margin-right: 8px;"></i> Agregar a mi Cotización
+                            </button>
+                            <a href="${waUrl}" class="btn btn-whatsapp" style="width: 100%;" target="_blank">
+                                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar directo por WhatsApp
                             </a>
                             <a href="calculadora.html" class="btn btn-primary" style="width: 100%;">
                                 <i class="fa-solid fa-calculator" style="margin-right: 8px;"></i> Calcular cantidades en la Calculadora

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materiales Chilavert | Todo lo que necesitás para construir</title>
-    <meta name="description" content="Catálogo de materiales de construcción. Venta a profesionales y particulares.">
+    <meta name="description" content="Catálogo de materiales de construcción en Villa Ballester. Cemento, áridos, ladrillos, hierros, adhesivos y cotización directa por WhatsApp.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -25,19 +26,23 @@
                     <li><a href="productos.html">Productos</a></li>
                     <li><a href="calculadora.html">Calculadora</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="obras.html">Obras</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
             
-            <a href="#" class="btn btn-whatsapp header-cta" id="header-whatsapp-btn">
-                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar
-            </a>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="btn-cart-nav" id="cart-nav-btn" title="Ver carrito de cotización">
+                    <i class="fa-solid fa-cart-shopping"></i> <span class="hide-mobile">Cotización</span> <span class="cart-badge">0</span>
+                </button>
+                <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta%20comercial" class="btn btn-whatsapp header-cta" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> <span class="hide-mobile">Consultar</span>
+                </a>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero con Carrusel Vertical -->
+        <!-- Hero con Carrusel Vertical Cíclico -->
         <section class="hero-slider-section" id="hero-slider">
             <div class="hero-slides-wrapper" id="hero-slides-wrapper">
                 <div class="hero-slide active" style="background-image: url('img/hero-hierros.png');"></div>
@@ -49,11 +54,10 @@
                 <div class="hero-actions">
                     <a href="productos.html" class="btn btn-accent">Ver Productos</a>
                     <a href="calculadora.html" class="btn btn-primary" style="border: 1px solid rgba(255,255,255,0.3);"><i class="fa-solid fa-calculator" style="margin-right:8px;"></i> Calculadora de Obra</a>
-                    <a href="#" class="btn btn-whatsapp" id="hero-whatsapp-btn"><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar por WhatsApp</a>
+                    <a href="https://wa.me/5491139480685" class="btn btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar por WhatsApp</a>
                 </div>
             </div>
 
-            <!-- Indicadores verticales para cuando se agreguen más imágenes -->
             <div class="hero-slider-indicators" id="hero-slider-indicators"></div>
         </section>
 
@@ -97,11 +101,11 @@
         </section>
 
         <!-- Nosotros Snippet -->
-        <section class="section hero" style="background-color: var(--color-primary-dark);">
+        <section class="section" style="background-color: var(--color-primary-dark); color: white;">
             <div class="container text-center">
                 <h2 class="section-title" style="color: white;">Soluciones para Profesionales y Obras</h2>
                 <p style="color: var(--color-border); max-width: 800px; margin: 0 auto 2rem;">
-                    Brindamos asesoramiento, variedad de materiales y atención personalizada. Resolvemos las necesidades de arquitectos, constructores y empresas.
+                    Brindamos asesoramiento, variedad de materiales y atención personalizada. Resolvemos las necesidades de arquitectos, constructores y particulares con entrega directa en obra.
                 </p>
                 <a href="nosotros.html" class="btn btn-accent">Conocer más sobre nosotros</a>
             </div>
@@ -129,7 +133,10 @@
                 <div class="footer-col">
                     <h3>Contacto</h3>
                     <ul id="footer-contact-list">
-                        <!-- Contact injected by JS -->
+                        <li><i class="fa-solid fa-phone"></i> 4738-3008 / 4768-4847</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> +54 9 11 3948-0685</li>
+                        <li><i class="fa-solid fa-envelope"></i> pedidos@birchsa.com.ar</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Sargento Cabral 2861, Villa Ballester</li>
                     </ul>
                 </div>
             </div>
@@ -140,13 +147,14 @@
     </footer>
 
     <!-- FAB WhatsApp -->
-    <a href="#" class="fab-whatsapp" id="fab-whatsapp" title="Consultar por WhatsApp">
+    <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="fab-whatsapp" id="fab-whatsapp" target="_blank" title="Consultar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- Scripts -->
     <script src="js/config.js"></script>
     <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
