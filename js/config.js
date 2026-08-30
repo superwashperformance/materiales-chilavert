@@ -1,4 +1,4 @@
-﻿const siteConfig = {
+const siteConfig = {
     business: {
         name: "Materiales Chilavert",
         description: "Todo lo que necesitás para construir. Más de 60 años de trayectoria en la venta y distribución de materiales de construcción."

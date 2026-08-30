@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     if (typeof catalogData === "undefined") return;
 
     const productsGrid = document.getElementById("products-grid");

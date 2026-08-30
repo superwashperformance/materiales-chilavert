@@ -1,4 +1,4 @@
-﻿// Carrito / Cotizador por WhatsApp - Materiales Chilavert
+// Carrito / Cotizador por WhatsApp - Materiales Chilavert
 
 const CartManager = {
     storageKey: 'chilavert_cart',

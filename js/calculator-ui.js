@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Controlador de Interfaz de Usuario para la Calculadora de Materiales
  * Materiales Chilavert
  */
