@@ -450,7 +450,7 @@ img {
     }
 }
 
-/* Carrusel Continuo de Marcas */
+/* Carrusel Continuo de Marcas con Logos */
 .brands-carousel-section {
     padding: 3.5rem 0;
     background: #ffffff;
@@ -469,16 +469,17 @@ img {
     width: 100%;
     overflow: hidden;
     position: relative;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .brands-track {
     display: flex;
-    gap: 1.75rem;
+    gap: 1.5rem;
     width: max-content;
-    animation: scrollBrands 30s linear infinite;
-    padding: 0.5rem 0;
+    animation: scrollBrands 25s linear infinite;
+    padding: 0.75rem 0;
+    align-items: center;
 }
 
 .brands-track:hover {
@@ -486,37 +487,48 @@ img {
 }
 
 .brand-card {
-    background: #f8fafc;
+    background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: var(--radius-md);
-    padding: 1.25rem 2rem;
-    min-width: 220px;
+    padding: 0.75rem 1.5rem;
+    min-width: 200px;
+    height: 95px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .brand-card:hover {
     transform: translateY(-4px);
     border-color: var(--color-accent);
-    box-shadow: 0 10px 15px -3px rgba(217, 4, 41, 0.15);
-    background: #ffffff;
+    box-shadow: 0 10px 20px -3px rgba(217, 4, 41, 0.18);
+}
+
+.brand-card-logo {
+    max-height: 52px;
+    max-width: 155px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.brand-card:hover .brand-card-logo {
+    transform: scale(1.08);
 }
 
 .brand-card-name {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
     color: var(--color-primary);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     letter-spacing: -0.3px;
 }
 
 .brand-card-desc {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--color-text-light);
     font-weight: 500;
 }

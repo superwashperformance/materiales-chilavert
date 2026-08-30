@@ -1,4 +1,4 @@
-const siteConfig = {
+﻿const siteConfig = {
     business: {
         name: "Materiales Chilavert",
         description: "Todo lo que necesitás para construir. Más de 60 años de trayectoria en la venta y distribución de materiales de construcción."
@@ -19,15 +19,46 @@ const siteConfig = {
     },
     whatsappMessage: "Hola, me contacto desde la web de Materiales Chilavert. Quisiera consultar sobre: ",
     
-    // Marcas Oficiales
+    // Marcas Oficiales con sus Logos
     brands: [
-        { name: "Cementos Avellaneda", desc: "Cementos, Cal Hidrat y Adhesivos Perfecto" },
-        { name: "Weber Saint-Gobain", desc: "Hidrófugos Weber HD, Ceresita y Adhesivos" },
-        { name: "Acindar", desc: "Hierros ADN 420 y Mallas Sima" },
-        { name: "El Milagro", desc: "Calidra - Cal Aérea Hidratada San Juan" },
-        { name: "Fanelli", desc: "Ladrillos Cerámicos Huecos y Portantes" },
-        { name: "Ctibor", desc: "Ladrillos Cerámicos de Alta Calidad" },
-        { name: "Megaflex", desc: "Membranas Asfálticas e Impermeabilizantes" }
+        { 
+            name: "Cementos Avellaneda", 
+            logo: "img/brands/logo-avellaneda.jpg", 
+            desc: "Cementos, Cal Hidrat y Adhesivos Perfecto" 
+        },
+        { 
+            name: "Weber Saint-Gobain", 
+            logo: "img/brands/logo-weber.jpg", 
+            desc: "Hidrófugos Weber HD, Ceresita y Weberpint" 
+        },
+        { 
+            name: "Acerbrag", 
+            logo: "img/brands/logo-acerbrag.webp", 
+            desc: "Aceros y Barras para Construcción" 
+        },
+        { 
+            name: "Cefas", 
+            logo: "img/brands/logo-cefas.webp", 
+            desc: "Cales Aéreas e Hidráulicas El Milagro" 
+        },
+        { 
+            name: "Cerámica Fanelli", 
+            logo: "img/brands/logo-fanelli.jpg", 
+            desc: "Ladrillos Cerámicos Huecos y Portantes" 
+        },
+        { 
+            name: "La Pastoriza", 
+            logo: "img/brands/logo-lapastoriza.jpg", 
+            desc: "Ladrillos Cerámicos de Alta Calidad" 
+        },
+        { 
+            name: "Acindar", 
+            desc: "Hierros ADN 420 y Mallas Sima" 
+        },
+        { 
+            name: "Megaflex", 
+            desc: "Membranas Asfálticas e Impermeabilizantes" 
+        }
     ],
 
     // Carrusel Cíclico Infinito del Hero

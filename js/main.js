@@ -150,15 +150,19 @@
         }).join("");
     }
 
-    // 5. Renderizar Carrusel Continuo de Marcas
+    // 5. Renderizar Carrusel Continuo de Marcas con Logos
     const brandsTrack = document.getElementById("brands-track");
     if(brandsTrack && siteConfig.brands && siteConfig.brands.length > 0) {
         const brandsList = [...siteConfig.brands, ...siteConfig.brands];
-        brandsTrack.innerHTML = brandsList.map(brand => `
-            <div class="brand-card">
-                <div class="brand-card-name">${brand.name}</div>
-                <div class="brand-card-desc">${brand.desc}</div>
+        brandsTrack.innerHTML = brandsList.map(brand => {
+            const contentHtml = brand.logo
+                ? `<img src="${brand.logo}" alt="${brand.name}" class="brand-card-logo" loading="lazy">`
+                : `<div class="brand-card-name">${brand.name}</div><div class="brand-card-desc">${brand.desc || ''}</div>`;
+            return `
+            <div class="brand-card" title="${brand.name} - ${brand.desc || ''}">
+                ${contentHtml}
             </div>
-        `).join("");
+            `;
+        }).join("");
     }
 });
