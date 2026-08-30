@@ -12,7 +12,7 @@
     }
 
     // Configurar enlaces de WhatsApp
-    const waNumber = siteConfig.contact.whatsapp.replace(/\D/g, "");
+    const waNumber = (typeof siteConfig.contact.whatsappRaw !== "undefined") ? siteConfig.contact.whatsappRaw : "5491139480685";
     const waUrl = waNumber ? `https://wa.me/${waNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}` : "#";
     
     const waBtns = [
@@ -33,6 +33,7 @@
             <li><i class="fa-brands fa-whatsapp"></i> ${siteConfig.contact.whatsapp}</li>
             <li><i class="fa-solid fa-envelope"></i> ${siteConfig.contact.email}</li>
             <li><i class="fa-solid fa-location-dot"></i> ${siteConfig.contact.address}</li>
+            <li><i class="fa-solid fa-clock"></i> ${siteConfig.contact.schedule}</li>
         `;
     }
 
@@ -51,7 +52,7 @@
         });
     }
 
-    // 3. Carrusel Vertical Cíclico Infinito ("Siempre de Abajo hacia Arriba")
+    // 3. Carrusel Vertical Cíclico Infinito del Hero
     const heroSlidesWrapper = document.getElementById("hero-slides-wrapper");
     const heroIndicators = document.getElementById("hero-slider-indicators");
     const heroTitle = document.getElementById("hero-title");
@@ -129,7 +130,7 @@
         }
     }
 
-    // 4. Renderizar Categorías en Home con Fotografías de Grupos
+    // 4. Renderizar Categorías en Home
     const catGrid = document.getElementById("categories-grid");
     if(catGrid && typeof catalogData !== "undefined") {
         catGrid.innerHTML = catalogData.categories.map(cat => {
@@ -149,31 +150,15 @@
         }).join("");
     }
 
-    // 5. Productos Destacados con Foto Específica del Producto
-    const featuredGrid = document.getElementById("featured-grid");
-    if(featuredGrid && typeof catalogData !== "undefined") {
-        const featuredProducts = catalogData.products.slice(0, 3);
-        featuredGrid.innerHTML = featuredProducts.map(prod => {
-            const catObj = catalogData.categories.find(c => c.id === prod.category);
-            const catName = catObj ? catObj.name : "";
-            const prodImgSrc = prod.image || (catObj && catObj.image) || "";
-            const prodImg = prodImgSrc 
-                ? `<div class="card-img-wrapper"><img src="${prodImgSrc}" alt="${prod.name}" loading="lazy"></div>` 
-                : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
-
-            return `
-            <div class="card">
-                ${prodImg}
-                <div class="card-body">
-                    <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: bold; text-transform: uppercase;">${catName}</span>
-                    <h3 class="card-title">${prod.name}</h3>
-                    <p class="card-desc">${prod.description}</p>
-                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                        <a href="producto-detalle.html?id=${prod.id}" class="btn btn-primary" style="flex: 1; padding: 0.5rem; font-size: 0.9rem;">Ver</a>
-                        <a href="${waUrl + encodeURIComponent(prod.name)}" class="btn btn-whatsapp" style="flex: 1; padding: 0.5rem; font-size: 0.9rem;">Consultar</a>
-                    </div>
-                </div>
+    // 5. Renderizar Carrusel Continuo de Marcas
+    const brandsTrack = document.getElementById("brands-track");
+    if(brandsTrack && siteConfig.brands && siteConfig.brands.length > 0) {
+        const brandsList = [...siteConfig.brands, ...siteConfig.brands];
+        brandsTrack.innerHTML = brandsList.map(brand => `
+            <div class="brand-card">
+                <div class="brand-card-name">${brand.name}</div>
+                <div class="brand-card-desc">${brand.desc}</div>
             </div>
-        `}).join("");
+        `).join("");
     }
 });
