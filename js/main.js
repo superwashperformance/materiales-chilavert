@@ -90,22 +90,21 @@
             const outgoing = slideEls[currentSlideIdx];
             const incoming = slideEls[newIdx];
 
-            // 1. Preparar la diapositiva entrante abajo (sin transición)
+            // 1. Preparar la diapositiva entrante abajo
             incoming.className = 'hero-slide idle-bottom';
-            void incoming.offsetHeight; // Forzar reflow del navegador
+            void incoming.offsetHeight; // Forzar reflow
 
-            // 2. Animar: Saliente sube hacia arriba (-100%), Entrante sube a posición (0%)
+            // 2. Animar verticalmente
             outgoing.className = 'hero-slide animating prev';
             incoming.className = 'hero-slide animating active';
 
-            // Actualizar indicadores
             if (dotEls.length > 0) {
                 dotEls.forEach((dot, idx) => {
                     dot.classList.toggle('active', idx === newIdx);
                 });
             }
 
-            // Transición suave de textos
+            // Transición de textos
             if (heroTitle && heroSubtitle && slides[newIdx]) {
                 heroTitle.style.transition = 'opacity 0.3s ease';
                 heroSubtitle.style.transition = 'opacity 0.3s ease';
@@ -120,7 +119,7 @@
                 }, 300);
             }
 
-            // 3. Al terminar la animación (950ms), reubicar la diapositiva saliente abajo para el próximo ciclo
+            // 3. Reubicar para el próximo ciclo
             setTimeout(() => {
                 outgoing.className = 'hero-slide idle-bottom';
                 currentSlideIdx = newIdx;
@@ -128,7 +127,6 @@
             }, 980);
         }
 
-        // Auto-rotación continua cada 5 segundos (Cíclica 1->2->3->4->1->2...)
         if (slides.length > 1) {
             setInterval(() => {
                 const nextIdx = (currentSlideIdx + 1) % slides.length;
@@ -137,21 +135,24 @@
         }
     }
 
-    // 4. Renderizar Categorías en Home
+    // 4. Renderizar Categorías en Home con Fotografías Reales de Productos
     const catGrid = document.getElementById("categories-grid");
     if(catGrid && typeof catalogData !== "undefined") {
-        catGrid.innerHTML = catalogData.categories.map(cat => `
+        catGrid.innerHTML = catalogData.categories.map(cat => {
+            const imgHtml = cat.image 
+                ? `<div class="card-img-wrapper"><img src="${cat.image}" alt="${cat.name}" loading="lazy"></div>` 
+                : `<div class="card-img-placeholder"><i class="fa-solid ${cat.icon || 'fa-box'}"></i></div>`;
+            return `
             <a href="productos.html?categoria=${cat.id}" class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid ${cat.icon || 'fa-box'}"></i>
-                </div>
+                ${imgHtml}
                 <div class="card-body">
                     <h3 class="card-title">${cat.name}</h3>
                     <p class="card-desc">${cat.description}</p>
                     <span class="btn btn-primary" style="margin-top: 1rem;">Ver Categoría &rarr;</span>
                 </div>
             </a>
-        `).join("");
+            `;
+        }).join("");
     }
 
     // 5. Productos Destacados
@@ -160,11 +161,14 @@
         const featuredProducts = catalogData.products.slice(0, 3);
         featuredGrid.innerHTML = featuredProducts.map(prod => {
             const catName = catalogData.categories.find(c => c.id === prod.category)?.name || "";
+            const catObj = catalogData.categories.find(c => c.id === prod.category);
+            const prodImg = (catObj && catObj.image) 
+                ? `<div class="card-img-wrapper"><img src="${catObj.image}" alt="${prod.name}" loading="lazy"></div>`
+                : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
+
             return `
             <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-image"></i>
-                </div>
+                ${prodImg}
                 <div class="card-body">
                     <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: bold; text-transform: uppercase;">${catName}</span>
                     <h3 class="card-title">${prod.name}</h3>

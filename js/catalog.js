@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+ï»¿document.addEventListener("DOMContentLoaded", () => {
     if (typeof catalogData === "undefined") return;
 
     const productsGrid = document.getElementById("products-grid");
@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let searchQuery = "";
 
     // WhatsApp base URL from config
-    const waNumber = siteConfig.contact.whatsapp.replace(/\D/g, "");
+    const waNumber = (typeof siteConfig !== "undefined" && siteConfig.contact.whatsapp) ? siteConfig.contact.whatsapp.replace(/\D/g, "") : "";
     const waBaseUrl = `https://wa.me/${waNumber}?text=`;
 
     // Render Sidebar Categories
     function renderCategories() {
-        let html = `<li><a data-cat="all" class="${activeCategory === "all" ? "active" : ""}">Todas las categorías</a></li>`;
+        let html = `<li><a data-cat="all" class="${activeCategory === "all" ? "active" : ""}">Todas las categorÃ­as</a></li>`;
         html += catalogData.categories.map(cat => 
             `<li><a data-cat="${cat.id}" class="${activeCategory === cat.id ? "active" : ""}">${cat.name}</a></li>`
         ).join("");
@@ -29,13 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
             a.addEventListener("click", (e) => {
                 e.preventDefault();
                 activeCategory = e.target.getAttribute("data-cat");
-                // Update URL without reload
                 const url = new URL(window.location);
                 if(activeCategory === "all") url.searchParams.delete("categoria");
                 else url.searchParams.set("categoria", activeCategory);
                 window.history.pushState({}, "", url);
                 
-                renderCategories(); // update active class
+                renderCategories();
                 renderProducts();
             });
         });
@@ -43,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render Products Grid
     function renderProducts() {
-        // Filter
         let filtered = catalogData.products;
         
         if (activeCategory !== "all") {
@@ -61,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 p.description.toLowerCase().includes(q) ||
                 (p.brand && p.brand.toLowerCase().includes(q))
             );
-            titleLabel.textContent = "Resultados de búsqueda";
+            titleLabel.textContent = "Resultados de bÃºsqueda";
         }
 
         countLabel.textContent = `${filtered.length} productos`;
@@ -71,15 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Render HTML
+        // Render HTML con fotos reales
         productsGrid.innerHTML = filtered.map(prod => {
-            const catName = catalogData.categories.find(c => c.id === prod.category)?.name || "";
+            const catObj = catalogData.categories.find(c => c.id === prod.category);
+            const catName = catObj ? catObj.name : "";
+            const prodImg = (catObj && catObj.image) 
+                ? `<div class="card-img-wrapper"><img src="${catObj.image}" alt="${prod.name}" loading="lazy"></div>` 
+                : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
             const msg = encodeURIComponent(`Hola, me interesa el producto: ${prod.name}`);
             return `
             <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-image"></i>
-                </div>
+                ${prodImg}
                 <div class="card-body">
                     <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: bold; text-transform: uppercase;">${catName}</span>
                     <h3 class="card-title">${prod.name}</h3>
@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
         renderProducts();
     });
 
-    // Initialize
     renderCategories();
     renderProducts();
 });

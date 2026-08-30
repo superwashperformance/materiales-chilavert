@@ -5,14 +5,14 @@
 
 const catalogData = {
     categories: [
-        { id: 'cementos', name: 'Cementos y Cales', icon: 'fa-cubes', description: 'Cementos portland, de albanileria y cales hidraulicas y aereas.' },
-        { id: 'aridos', name: 'Aridos', icon: 'fa-mountain', description: 'Arena de rio, piedra partida 6/20, cascote granza y mezclas.' },
-        { id: 'ladrillos', name: 'Ladrillos y Bloques', icon: 'fa-border-all', description: 'Ladrillos comunes, ceramicos huecos, portantes y bloques de hormigon/Retak.' },
-        { id: 'hierros', name: 'Hierros y Acero', icon: 'fa-bars-staggered', description: 'Barras ADN 420 (6mm a 25mm), mallas electrosoldadas y alambres.' },
-        { id: 'adhesivos', name: 'Adhesivos y Pastinas', icon: 'fa-fill-drip', description: 'Pegamentos Weber/Klaukol para ceramicas y porcelanatos, pastinas y aditivos.' },
-        { id: 'aislantes', name: 'Hidrofugos e Impermeabilizantes', icon: 'fa-shield-halved', description: 'Ceresita, hidrofugos de masa, membranas asfalticas y emulsiones.' },
-        { id: 'pinturas', name: 'Pinturas y Revestimientos', icon: 'fa-paint-roller', description: 'Latex exterior e interior, fijadores selladores y enduidos.' },
-        { id: 'chapas', name: 'Chapas y Techos', icon: 'fa-house-chimney', description: 'Chapas sinusoidales, trapezoidales, perfiles y aislaciones termicas.' }
+        { id: 'cementos', name: 'Cementos y Cales', image: 'img/categories/cat-cementos.webp', icon: 'fa-cubes', description: 'Cementos portland, de albañilería y cales hidráulicas y aéreas.' },
+        { id: 'aridos', name: 'Áridos', image: 'img/categories/cat-aridos.png', icon: 'fa-mountain', description: 'Arena de río, piedra partida 6/20, cascote granza y mezclas.' },
+        { id: 'ladrillos', name: 'Ladrillos y Bloques', icon: 'fa-border-all', description: 'Ladrillos comunes, cerámicos huecos, portantes y bloques de hormigón/Retak.' },
+        { id: 'hierros', name: 'Hierros y Acero', image: 'img/categories/cat-hierros.png', icon: 'fa-bars-staggered', description: 'Barras ADN 420 (6mm a 25mm), mallas electrosoldadas y alambres.' },
+        { id: 'adhesivos', name: 'Adhesivos y Pastinas', image: 'img/categories/cat-adhesivos.jpg', icon: 'fa-fill-drip', description: 'Pegamentos Weber/Klaukol para cerámicas y porcelanatos, pastinas y aditivos.' },
+        { id: 'aislantes', name: 'Hidrófugos e Impermeabilizantes', icon: 'fa-shield-halved', description: 'Ceresita, hidrófugos de masa, membranas asfálticas y emulsiones.' },
+        { id: 'pinturas', name: 'Pinturas y Revestimientos', icon: 'fa-paint-roller', description: 'Látex exterior e interior, fijadores selladores y enduidos.' },
+        { id: 'chapas', name: 'Chapas y Techos', icon: 'fa-house-chimney', description: 'Chapas sinusoidales, trapezoidales, perfiles y aislaciones térmicas.' }
     ],
 
     materials: [
