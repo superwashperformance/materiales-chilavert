@@ -450,9 +450,9 @@ img {
     }
 }
 
-/* Carrusel Continuo de Marcas con Logos */
+/* Carrusel Continuo de Marcas - Logos Limpios Sin Bordes Ni Plantillas */
 .brands-carousel-section {
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
     background: #ffffff;
     overflow: hidden;
     position: relative;
@@ -462,23 +462,23 @@ img {
 
 .brands-carousel-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .brands-carousel-wrapper {
     width: 100%;
     overflow: hidden;
     position: relative;
-    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
 .brands-track {
     display: flex;
-    gap: 1.5rem;
+    gap: 4rem;
     width: max-content;
-    animation: scrollBrands 25s linear infinite;
-    padding: 0.75rem 0;
+    animation: scrollBrands 24s linear infinite;
+    padding: 0.5rem 0;
     align-items: center;
 }
 
@@ -486,51 +486,38 @@ img {
     animation-play-state: paused;
 }
 
-.brand-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: var(--radius-md);
-    padding: 0.75rem 1.5rem;
-    min-width: 200px;
-    height: 95px;
+.brand-item {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    opacity: 0.85;
 }
 
-.brand-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-accent);
-    box-shadow: 0 10px 20px -3px rgba(217, 4, 41, 0.18);
+.brand-item:hover {
+    transform: scale(1.12);
+    opacity: 1;
 }
 
-.brand-card-logo {
-    max-height: 52px;
-    max-width: 155px;
+.brand-logo-img {
+    height: 38px;
+    max-width: 135px;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    display: block;
 }
 
-.brand-card:hover .brand-card-logo {
-    transform: scale(1.08);
-}
-
-.brand-card-name {
-    font-size: 1.1rem;
+.brand-text-name {
+    font-size: 1.05rem;
     font-weight: 800;
     color: var(--color-primary);
-    margin-bottom: 2px;
-    letter-spacing: -0.3px;
-}
-
-.brand-card-desc {
-    font-size: 0.75rem;
-    color: var(--color-text-light);
-    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
 }
 
 @keyframes scrollBrands {

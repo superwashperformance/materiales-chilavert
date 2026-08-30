@@ -150,16 +150,17 @@
         }).join("");
     }
 
-    // 5. Renderizar Carrusel Continuo de Marcas con Logos
+    // 5. Renderizar Carrusel Continuo de Logos Limpios Sin Bordes Ni Plantillas
     const brandsTrack = document.getElementById("brands-track");
     if(brandsTrack && siteConfig.brands && siteConfig.brands.length > 0) {
+        // Render duplicate array for seamless infinite scroll
         const brandsList = [...siteConfig.brands, ...siteConfig.brands];
         brandsTrack.innerHTML = brandsList.map(brand => {
             const contentHtml = brand.logo
-                ? `<img src="${brand.logo}" alt="${brand.name}" class="brand-card-logo" loading="lazy">`
-                : `<div class="brand-card-name">${brand.name}</div><div class="brand-card-desc">${brand.desc || ''}</div>`;
+                ? `<img src="${brand.logo}" alt="${brand.name}" class="brand-logo-img" loading="lazy">`
+                : `<span class="brand-text-name">${brand.name}</span>`;
             return `
-            <div class="brand-card" title="${brand.name} - ${brand.desc || ''}">
+            <div class="brand-item" title="${brand.name} - ${brand.desc || ''}">
                 ${contentHtml}
             </div>
             `;
