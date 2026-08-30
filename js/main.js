@@ -137,7 +137,7 @@
                 ? `<div class="card-img-wrapper"><img src="${cat.image}" alt="${cat.name}" loading="lazy"></div>` 
                 : `<div class="card-img-placeholder"><i class="fa-solid ${cat.icon || 'fa-box'}"></i></div>`;
             return `
-            <a href="productos.html?categoria=${cat.id}" class="card">
+            <a href="productos.html?categoria=${cat.id}#products-section" class="card">
                 ${imgHtml}
                 <div class="card-body">
                     <h3 class="card-title">${cat.name}</h3>

@@ -6,6 +6,7 @@
     const searchInput = document.getElementById("search-input");
     const countLabel = document.getElementById("product-count");
     const titleLabel = document.getElementById("current-category-title");
+    const catalogHeader = document.getElementById("catalog-header");
 
     // Read URL params
     const urlParams = new URLSearchParams(window.location.search);
@@ -16,7 +17,7 @@
     const waNumber = (typeof siteConfig !== "undefined" && siteConfig.contact.whatsappRaw) ? siteConfig.contact.whatsappRaw : "5491139480685";
     const waBaseUrl = `https://wa.me/${waNumber}?text=`;
 
-    // Render Sidebar Categories
+    // Render Sidebar / Mobile Chips Categories
     function renderCategories() {
         let html = `<li><a data-cat="all" class="${activeCategory === "all" ? "active" : ""}">Todas las categorías</a></li>`;
         html += catalogData.categories.map(cat => 
@@ -35,8 +36,15 @@
                 
                 renderCategories();
                 renderProducts();
+                scrollToProducts();
             });
         });
+    }
+
+    function scrollToProducts() {
+        if (catalogHeader) {
+            catalogHeader.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
     }
 
     // Render Products Grid
@@ -108,4 +116,9 @@
 
     renderCategories();
     renderProducts();
+
+    // Si viene con categoría seleccionada por URL, auto-scroll directo a los productos
+    if (activeCategory !== "all" || window.location.hash === "#products-section") {
+        setTimeout(scrollToProducts, 200);
+    }
 });

@@ -16,11 +16,6 @@
             gap: var(--space-lg);
             margin-top: var(--space-lg);
         }
-        @media (max-width: 768px) {
-            .catalog-layout {
-                grid-template-columns: 1fr;
-            }
-        }
         .sidebar {
             background: var(--color-white);
             padding: var(--space-md);
@@ -44,7 +39,7 @@
         }
         .category-list a {
             display: block;
-            padding: 0.5rem;
+            padding: 0.55rem 0.85rem;
             color: var(--color-text-main);
             border-radius: var(--radius-sm);
             transition: all 0.2s ease;
@@ -58,7 +53,7 @@
             color: var(--color-white);
         }
         .search-bar {
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-md);
         }
         .search-bar input {
             width: 100%;
@@ -77,12 +72,64 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: var(--space-md);
+            scroll-margin-top: 80px;
+        }
+
+        /* Chips Móviles de Categorías */
+        @media (max-width: 900px) {
+            .catalog-layout {
+                grid-template-columns: 1fr;
+                margin-top: 0.75rem;
+                gap: 1rem;
+            }
+            .sidebar {
+                padding: 0;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+            }
+            .sidebar-title {
+                display: none;
+            }
+            .category-list {
+                display: flex;
+                overflow-x: auto;
+                gap: 0.5rem;
+                padding-bottom: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .category-list::-webkit-scrollbar {
+                display: none;
+            }
+            .category-list li {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            .category-list a {
+                background: #ffffff;
+                border: 1px solid var(--color-border);
+                border-radius: 30px;
+                padding: 0.45rem 1rem;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                box-shadow: var(--shadow-sm);
+            }
+            .category-list a.active {
+                background-color: var(--color-accent);
+                border-color: var(--color-accent);
+                color: #ffffff;
+                font-weight: 700;
+            }
+            .catalog-header {
+                scroll-margin-top: 70px;
+            }
         }
     </style>
 </head>
 <body>
 
-        <header class="site-header">
+    <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
             
@@ -117,7 +164,7 @@
             </div>
 
             <div class="catalog-layout">
-                <!-- Sidebar Categorías -->
+                <!-- Sidebar / Chips Categorías -->
                 <aside class="sidebar">
                     <h3 class="sidebar-title">Categorías</h3>
                     <ul class="category-list" id="category-filter-list">
@@ -126,8 +173,8 @@
                 </aside>
 
                 <!-- Grid Productos -->
-                <section>
-                    <div class="catalog-header">
+                <section id="products-section">
+                    <div class="catalog-header" id="catalog-header">
                         <h2 id="current-category-title">Todos los Productos</h2>
                         <span id="product-count" style="color: var(--color-text-light); font-weight: 500;"></span>
                     </div>
@@ -140,7 +187,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
