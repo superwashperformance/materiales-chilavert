@@ -3,23 +3,23 @@ const catalogData = {
         { 
             id: "cementos", 
             name: "Cementos y Cales", 
-            image: "img/categories/cat-cementos.webp", 
+            image: "img/categories/cat-cementos.jpg", 
             icon: "fa-cubes", 
             description: "Cementos portland, de albañilería y cales hidráulicas y aéreas." 
         },
         { 
             id: "aridos", 
             name: "Áridos", 
-            image: "img/categories/cat-aridos.png", 
+            image: "img/categories/cat-aridos.jpg", 
             icon: "fa-mountain", 
-            description: "Arena de río, piedra partida 6/20, cascote granza y mezclas." 
+            description: "Arena de río limpia, piedra partida 6/20, cascote granza y mezclas." 
         },
         { 
             id: "ladrillos", 
             name: "Ladrillos y Bloques", 
             image: "img/categories/cat-ladrillos.webp", 
             icon: "fa-border-all", 
-            description: "Ladrillos comunes, cerámicos huecos, portantes y bloques de hormigón/Retak." 
+            description: "Ladrillos comunes, cerámicos huecos, portantes y bloques de hormigón." 
         },
         { 
             id: "hierros", 
@@ -31,28 +31,22 @@ const catalogData = {
         { 
             id: "adhesivos", 
             name: "Adhesivos y Pastinas", 
-            image: "img/categories/cat-adhesivos.webp", 
+            image: "img/categories/cat-adhesivos.jpg", 
             icon: "fa-fill-drip", 
-            description: "Pegamentos Perfecto y Weber para cerámicas y porcelanatos, pastinas y aditivos." 
+            description: "Línea completa Perfecto Adhesivos: Impermeable, Flexible y Porcellanato." 
         },
         { 
             id: "aislantes", 
             name: "Hidrófugos e Impermeabilizantes", 
-            image: "img/categories/cat-aislantes.webp", 
+            image: "img/categories/cat-aislantes.jpg", 
             icon: "fa-shield-halved", 
-            description: "Weber HD, Ceresita, hidrófugos de masa, membranas asfálticas y emulsiones." 
+            description: "Weber HD en pasta (1kg, 4kg, 10kg, 20kg), Ceresita y membranas asfálticas." 
         },
         { 
             id: "pinturas", 
             name: "Pinturas y Revestimientos", 
             icon: "fa-paint-roller", 
             description: "Látex exterior e interior, fijadores selladores y enduidos." 
-        },
-        { 
-            id: "chapas", 
-            name: "Chapas y Techos", 
-            icon: "fa-house-chimney", 
-            description: "Chapas sinusoidales, trapezoidales, perfiles y aislaciones térmicas." 
         }
     ],
 
@@ -342,30 +336,5 @@ const catalogData = {
             features: ["Bidón 4 Litros", "Rinde hasta 60 m² diluido", "Uniforma la absorción"] 
         },
 
-        // CHAPAS Y TECHOS
-        { 
-            id: "15100", 
-            category: "chapas", 
-            name: "Chapa Cincalum C-25 Sinusoidal (Ondulada)", 
-            description: "Chapa de acero revestida en aleación aluminio-cinc para máxima protección anticorrosiva.", 
-            brand: "Ternium", 
-            features: ["Calibre 25", "Largos de 1.10 x 3 a 13 mts", "Alta durabilidad"] 
-        },
-        { 
-            id: "15110", 
-            category: "chapas", 
-            name: "Chapa Cincalum C-25 Trapezoidal T-101", 
-            description: "Chapa trapezoidal de diseño arquitectónico y mayor resistencia estructural para cubiertas.", 
-            brand: "Ternium", 
-            features: ["Calibre 25", "Perfil T-101", "Ideal galpones y viviendas modernas"] 
-        },
-        { 
-            id: "15200", 
-            category: "chapas", 
-            name: "Perfil C Galvanizado 100x50x15", 
-            description: "Perfil estructural de chapa conformada para correas de techo y tinglados.", 
-            brand: "Siderar / Acindar", 
-            features: ["Barra 12 metros", "Chapa 1.6 / 2.0 mm", "Galvanizado"] 
-        }
     ]
 };
