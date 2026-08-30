@@ -18,7 +18,7 @@
             .product-detail-layout { grid-template-columns: 1fr; }
         }
         .product-gallery {
-            background: var(--color-bg-alt);
+            background: #ffffff;
             border-radius: var(--radius-lg);
             min-height: 400px;
             display: flex;
@@ -27,6 +27,17 @@
             font-size: 5rem;
             color: var(--color-text-light);
             border: 1px solid var(--color-border);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .product-gallery img {
+            max-width: 100%;
+            max-height: 380px;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+        .product-gallery:hover img {
+            transform: scale(1.05);
         }
         .product-info-cat {
             color: var(--color-accent);
@@ -57,7 +68,7 @@
             gap: 10px;
             color: var(--color-text-main);
         }
-        .features-list i { color: var(--color-primary); }
+        .features-list i { color: var(--color-accent); }
         .consult-box {
             background: var(--color-bg-alt);
             padding: var(--space-lg);
@@ -131,7 +142,7 @@
             }
 
             const category = catalogData.categories.find(c => c.id === product.category)?.name || "";
-            const waNumber = siteConfig.contact.whatsapp.replace(/\D/g, "");
+            const waNumber = (typeof siteConfig !== "undefined" && siteConfig.contact.whatsapp) ? siteConfig.contact.whatsapp.replace(/\D/g, "") : "";
             const msg = encodeURIComponent(`Hola, me interesa el producto: ${product.name}`);
             const waUrl = `https://wa.me/${waNumber}?text=${msg}`;
             
@@ -145,10 +156,12 @@
 
             document.title = `${product.name} | Materiales Chilavert`;
 
+            const galleryHtml = product.image 
+                ? `<div class="product-gallery"><img src="${product.image}" alt="${product.name}"></div>`
+                : `<div class="product-gallery"><i class="fa-solid fa-image"></i></div>`;
+
             container.innerHTML = `
-                <div class="product-gallery">
-                    <i class="fa-solid fa-image"></i>
-                </div>
+                ${galleryHtml}
                 <div class="product-info">
                     <span class="product-info-cat">${category}</span>
                     <h1 class="product-info-title">${product.name}</h1>
