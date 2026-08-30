@@ -62,12 +62,10 @@
         let currentSlideIdx = 0;
         let isTransitioning = false;
 
-        // Renderizar slides en el DOM
         heroSlidesWrapper.innerHTML = slides.map((slide, idx) => `
             <div class="hero-slide ${idx === 0 ? 'active' : 'idle-bottom'}" style="background-image: url('${slide.image}');" data-idx="${idx}"></div>
         `).join('');
 
-        // Renderizar indicadores verticales interactivos
         if (heroIndicators) {
             heroIndicators.innerHTML = slides.map((_, idx) => `
                 <button class="hero-indicator-dot ${idx === 0 ? 'active' : ''}" data-idx="${idx}" title="Diapositiva ${idx + 1}"></button>
@@ -90,11 +88,9 @@
             const outgoing = slideEls[currentSlideIdx];
             const incoming = slideEls[newIdx];
 
-            // 1. Preparar la diapositiva entrante abajo
             incoming.className = 'hero-slide idle-bottom';
-            void incoming.offsetHeight; // Forzar reflow
+            void incoming.offsetHeight;
 
-            // 2. Animar verticalmente
             outgoing.className = 'hero-slide animating prev';
             incoming.className = 'hero-slide animating active';
 
@@ -104,7 +100,6 @@
                 });
             }
 
-            // Transición de textos
             if (heroTitle && heroSubtitle && slides[newIdx]) {
                 heroTitle.style.transition = 'opacity 0.3s ease';
                 heroSubtitle.style.transition = 'opacity 0.3s ease';
@@ -119,7 +114,6 @@
                 }, 300);
             }
 
-            // 3. Reubicar para el próximo ciclo
             setTimeout(() => {
                 outgoing.className = 'hero-slide idle-bottom';
                 currentSlideIdx = newIdx;
@@ -135,7 +129,7 @@
         }
     }
 
-    // 4. Renderizar Categorías en Home con Fotografías Reales de Productos
+    // 4. Renderizar Categorías en Home con Fotografías de Grupos
     const catGrid = document.getElementById("categories-grid");
     if(catGrid && typeof catalogData !== "undefined") {
         catGrid.innerHTML = catalogData.categories.map(cat => {
@@ -155,15 +149,16 @@
         }).join("");
     }
 
-    // 5. Productos Destacados
+    // 5. Productos Destacados con Foto Específica del Producto
     const featuredGrid = document.getElementById("featured-grid");
     if(featuredGrid && typeof catalogData !== "undefined") {
         const featuredProducts = catalogData.products.slice(0, 3);
         featuredGrid.innerHTML = featuredProducts.map(prod => {
-            const catName = catalogData.categories.find(c => c.id === prod.category)?.name || "";
             const catObj = catalogData.categories.find(c => c.id === prod.category);
-            const prodImg = (catObj && catObj.image) 
-                ? `<div class="card-img-wrapper"><img src="${catObj.image}" alt="${prod.name}" loading="lazy"></div>`
+            const catName = catObj ? catObj.name : "";
+            const prodImgSrc = prod.image || (catObj && catObj.image) || "";
+            const prodImg = prodImgSrc 
+                ? `<div class="card-img-wrapper"><img src="${prodImgSrc}" alt="${prod.name}" loading="lazy"></div>` 
                 : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
 
             return `

@@ -24,7 +24,6 @@
         ).join("");
         categoryList.innerHTML = html;
 
-        // Add click events
         categoryList.querySelectorAll("a").forEach(a => {
             a.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -69,12 +68,13 @@
             return;
         }
 
-        // Render HTML con fotos reales
+        // Render HTML mostrando la foto específica del producto primero
         productsGrid.innerHTML = filtered.map(prod => {
             const catObj = catalogData.categories.find(c => c.id === prod.category);
             const catName = catObj ? catObj.name : "";
-            const prodImg = (catObj && catObj.image) 
-                ? `<div class="card-img-wrapper"><img src="${catObj.image}" alt="${prod.name}" loading="lazy"></div>` 
+            const prodImgSrc = prod.image || (catObj && catObj.image) || "";
+            const prodImg = prodImgSrc 
+                ? `<div class="card-img-wrapper"><img src="${prodImgSrc}" alt="${prod.name}" loading="lazy"></div>` 
                 : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
             const msg = encodeURIComponent(`Hola, me interesa el producto: ${prod.name}`);
             return `
