@@ -100,10 +100,10 @@
     </style>
 </head>
 <body>
-    <header class="site-header">
+        <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo" id="logo-text">Materiales Chilavert</a>
-            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            
             <nav class="main-nav" id="main-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -113,13 +113,17 @@
                     <li><a href="contacto.html" style="color: var(--color-accent)">Contacto</a></li>
                 </ul>
             </nav>
-            <div style="display: flex; align-items: center; gap: 10px;">
+
+            <div class="header-actions">
                 <button class="btn-cart-nav" id="cart-nav-btn" title="Ver carrito de cotización">
-                    <i class="fa-solid fa-cart-shopping"></i> <span class="hide-mobile">Cotización</span> <span class="cart-badge">0</span>
+                    <i class="fa-solid fa-cart-shopping"></i> <span class="cart-btn-text">Cotización</span> <span class="cart-badge">0</span>
                 </button>
-                <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta%20comercial" class="btn btn-whatsapp header-cta" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> <span class="hide-mobile">Consultar</span>
+                <a href="https://wa.me/5491139480685?text=Hola,%20quisiera%20hacer%20una%20consulta" class="btn btn-whatsapp header-cta" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> <span>Consultar</span>
                 </a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>

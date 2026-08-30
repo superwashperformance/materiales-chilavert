@@ -320,3 +320,16 @@
 .btn-add-cart:hover {
     background: var(--color-accent);
 }
+
+@media (max-width: 480px) {
+    .cart-drawer {
+        max-width: 100%;
+        width: 100%;
+    }
+    .cart-toast {
+        left: 12px;
+        right: 12px;
+        bottom: 16px;
+        font-size: 0.85rem;
+    }
+}
