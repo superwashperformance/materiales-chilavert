@@ -105,12 +105,18 @@
             color: var(--color-primary);
         }
         .detail-qty-control input {
-            width: 50px;
+            width: 60px;
             text-align: center;
             border: none;
             font-size: 1.1rem;
             font-weight: 700;
             color: var(--color-primary);
+            -moz-appearance: textfield;
+        }
+        .detail-qty-control input::-webkit-outer-spin-button,
+        .detail-qty-control input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
     </style>
 </head>
@@ -244,7 +250,7 @@
                             <label style="font-weight: 600;">Cantidad:</label>
                             <div class="detail-qty-control">
                                 <button onclick="let inp = document.getElementById('detail-qty-input'); if(parseInt(inp.value)>1) inp.value=parseInt(inp.value)-1;">-</button>
-                                <input type="text" id="detail-qty-input" value="1" readonly>
+                                <input type="number" id="detail-qty-input" value="1" min="1" step="1">
                                 <button onclick="let inp = document.getElementById('detail-qty-input'); inp.value=parseInt(inp.value)+1;">+</button>
                             </div>
                         </div>

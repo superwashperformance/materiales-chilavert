@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Render Products Grid
+    // Render Products Grid con Selector de Cantidad
     function renderProducts() {
         let filtered = catalogData.products;
         
@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Render HTML mostrando la foto específica del producto y botón de agregar al carrito
         productsGrid.innerHTML = filtered.map(prod => {
             const catObj = catalogData.categories.find(c => c.id === prod.category);
             const catName = catObj ? catObj.name : "";
@@ -89,12 +88,22 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card">
                 ${prodImg}
                 <div class="card-body">
-                    <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: bold; text-transform: uppercase;">${catName}</span>
+                    <span style="font-size: 0.78rem; color: var(--color-accent); font-weight: bold; text-transform: uppercase; margin-bottom: 2px;">${catName}</span>
                     <h3 class="card-title">${prod.name}</h3>
                     <p class="card-desc">${prod.description}</p>
                     
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-                        <button class="btn btn-accent" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;" onclick="CartManager.addItem('${prod.id}', 1)">
+                    <!-- Selector de Cantidad en la Tarjeta -->
+                    <div class="card-qty-row">
+                        <span class="card-qty-label">Cantidad:</span>
+                        <div class="card-qty-control">
+                            <button type="button" class="card-qty-btn" onclick="let inp = document.getElementById('qty-${prod.id}'); if(parseInt(inp.value)>1) inp.value=parseInt(inp.value)-1;">-</button>
+                            <input type="number" id="qty-${prod.id}" class="card-qty-input" value="1" min="1" step="1">
+                            <button type="button" class="card-qty-btn" onclick="let inp = document.getElementById('qty-${prod.id}'); inp.value=parseInt(inp.value)+1;">+</button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                        <button class="btn btn-accent" style="width: 100%; padding: 0.65rem; font-size: 0.92rem;" onclick="let qty = parseInt(document.getElementById('qty-${prod.id}').value) || 1; CartManager.addItem('${prod.id}', qty);">
                             <i class="fa-solid fa-cart-plus" style="margin-right: 6px;"></i> Agregar a Cotización
                         </button>
                         <div style="display: flex; gap: 0.5rem;">
