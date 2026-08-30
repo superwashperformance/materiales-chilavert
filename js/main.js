@@ -29,11 +29,10 @@
     const footerContactList = document.getElementById("footer-contact-list");
     if(footerContactList) {
         footerContactList.innerHTML = `
-            <li><i class="fa-solid fa-phone"></i> ${siteConfig.contact.phone}</li>
-            <li><i class="fa-brands fa-whatsapp"></i> ${siteConfig.contact.whatsapp}</li>
-            <li><i class="fa-solid fa-envelope"></i> ${siteConfig.contact.email}</li>
-            <li><i class="fa-solid fa-location-dot"></i> ${siteConfig.contact.address}</li>
-            <li><i class="fa-solid fa-clock"></i> ${siteConfig.contact.schedule}</li>
+            <li><i class="fa-solid fa-phone"></i> <span><a href="tel:01147383008">4738-3008</a> / <a href="tel:01147684847">4768-4847</a></span></li>
+            <li><i class="fa-brands fa-whatsapp"></i> <span><a href="https://wa.me/5491139480685" target="_blank">+54 9 11 3948-0685</a></span></li>
+            <li><i class="fa-solid fa-envelope"></i> <span><a href="mailto:pedidos@birchsa.com.ar">pedidos@birchsa.com.ar</a></span></li>
+            <li><i class="fa-solid fa-location-dot"></i> <span>Sargento Cabral 2861, Villa Ballester</span></li>
         `;
     }
 

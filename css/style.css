@@ -380,39 +380,170 @@ img {
     background-color: var(--color-whatsapp-hover);
 }
 
-/* Footer */
+/* Banner CTA Institucional */
+.home-cta-section {
+    padding: 4.5rem 0;
+    background: #f8fafc;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+}
+
+.home-cta-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .home-cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+}
+
+.home-cta-badge {
+    color: var(--color-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.home-cta-title {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-weight: 800;
+}
+
+.home-cta-desc {
+    color: var(--color-text-main);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0;
+}
+
+/* Footer Profesional y Prolijo */
 .site-footer {
-    background-color: var(--color-primary-dark);
-    color: var(--color-border);
-    padding: var(--space-xl) 0 var(--space-lg);
+    background-color: #0b1120;
+    color: #94a3b8;
+    padding: 4rem 0 2rem;
+    border-top: 3px solid var(--color-accent);
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
+    grid-template-columns: 1.3fr 0.8fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 .footer-col h3 {
-    color: var(--color-white);
-    font-size: 1.2rem;
-    margin-bottom: var(--space-md);
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--color-accent);
+}
+
+.footer-col p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-col ul li {
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.footer-col ul li i {
+    color: var(--color-accent);
+    font-size: 1.05rem;
+    margin-top: 3px;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footer-col a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .footer-col a:hover {
     color: var(--color-accent);
 }
 
+.footer-schedule-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    margin-top: 0.75rem;
+}
+
+.footer-schedule-box strong {
+    color: #ffffff;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.footer-schedule-box span {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    display: block;
+    line-height: 1.4;
+}
+
 .footer-bottom {
     text-align: center;
-    padding-top: var(--space-md);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+    color: #64748b;
 }
 
 /* Responsive */
