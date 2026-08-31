@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><i class="fa-solid fa-phone"></i> <span><a href="tel:01147383008">4738-3008</a> / <a href="tel:01147684847">4768-4847</a></span></li>
             <li><i class="fa-brands fa-whatsapp"></i> <span><a href="https://wa.me/5491139480685" target="_blank">+54 9 11 3948-0685</a></span></li>
             <li><i class="fa-solid fa-envelope"></i> <span><a href="mailto:pedidos@birchsa.com.ar">pedidos@birchsa.com.ar</a></span></li>
-            <li><i class="fa-solid fa-location-dot"></i> <span><a href="https://maps.app.goo.gl/w4umrVT5Yy7J9oC59" target="_blank">Sargento Cabral 2861, Villa Ballester</a></span></li>
+            <li><i class="fa-solid fa-location-dot"></i> <span><a href="https://maps.app.goo.gl/Qp6JxvScWbQujLnN8" target="_blank">Sargento Cabral 2861, Villa Ballester</a></span></li>
         `;
     }
 
