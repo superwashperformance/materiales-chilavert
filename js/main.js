@@ -41,13 +41,36 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("current-year").textContent = new Date().getFullYear();
     }
 
-    // 2. Menú Móvil
+    // 2. Menú Móvil Robusto con Icono Dinámico y Cierre al Clic
     const menuBtn = document.getElementById("mobile-menu-btn");
     const mainNav = document.getElementById("main-nav");
     
     if(menuBtn && mainNav) {
-        menuBtn.addEventListener("click", () => {
-            mainNav.classList.toggle("active");
+        menuBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isOpen = mainNav.classList.toggle("active");
+            const icon = menuBtn.querySelector("i");
+            if(icon) {
+                icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+            }
+        });
+
+        // Cerrar al tocar cualquier enlace del menú
+        mainNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                mainNav.classList.remove("active");
+                const icon = menuBtn.querySelector("i");
+                if(icon) icon.className = "fa-solid fa-bars";
+            });
+        });
+
+        // Cerrar al tocar fuera del menú
+        document.addEventListener("click", (e) => {
+            if(mainNav.classList.contains("active") && !mainNav.contains(e.target) && e.target !== menuBtn) {
+                mainNav.classList.remove("active");
+                const icon = menuBtn.querySelector("i");
+                if(icon) icon.className = "fa-solid fa-bars";
+            }
         });
     }
 
