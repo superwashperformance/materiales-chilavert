@@ -253,6 +253,25 @@ const catalogData = {
             features: ["Rendimiento: ~14.5 tejas por m²", "Fabricación tradicional Losa Olavarría", "Excelente encastre y resistencia al granizo", "Color terracota natural"] 
         },
         { 
+            id: "04600", 
+            category: "ladrillos", 
+            name: "Vigueta Pretensada de Hormigón T-11", 
+            image: "img/products/vigueta-pretensada.webp", 
+            images: [
+                "img/products/vigueta-pretensada.webp", 
+                "img/products/vigueta-pretensada-obra.webp"
+            ],
+            description: "Vigueta pretensada de hormigón de alta resistencia con perfil T invertido para armado de losas y entrepisos alivianados con bovedillas de telgopor o cerámicas.", 
+            brand: "Tensolite / Shap", 
+            variants: ["1.00 m", "1.20 m", "1.40 m", "1.60 m", "1.80 m", "2.00 m", "2.20 m", "2.40 m", "2.60 m", "2.80 m", "3.00 m", "3.20 m", "3.40 m", "3.60 m", "3.80 m", "4.00 m", "4.20 m", "4.40 m", "4.60 m", "4.80 m", "5.00 m", "5.20 m", "5.40 m", "5.60 m", "5.80 m", "6.00 m", "6.20 m", "6.40 m"],
+            features: [
+                "Medidas disponibles: desde 1.00 m hasta 6.40 m (cada 20 cm)", 
+                "Hormigón pretensado de alta resistencia", 
+                "Apto losas con ladrillo hueco o telgopor EPS", 
+                "Certificación y control de calidad IRAM"
+            ] 
+        },
+        { 
             id: "05006", 
             category: "ladrillos", 
             name: "Ladrillo Hueco 8x18x33 (6 Agujeros)", 
