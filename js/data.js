@@ -432,7 +432,7 @@ const catalogData = {
             id: "11105", 
             category: "adhesivos", 
             name: "Perfecto Adhesivo Porcellanato 30 kg", 
-            image: "img/products/adhesivo-perfecto-porcellanato.jpg", 
+            image: "img/products/adhesivo-perfecto-porcellanato.webp", 
             description: "Mezcla adhesiva de alta performance formulada especialmente para la colocación de placas de porcellanato y piezas de baja absorción.", 
             brand: "Cementos Avellaneda", 
             features: ["Bolsa 30 kg", "Norma IRAM 45062 Tipo C2-L,F,H", "Especial Porcellanatos"] 
