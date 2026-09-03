@@ -118,7 +118,56 @@
             -webkit-appearance: none;
             margin: 0;
         }
-    </style>
+    
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .gallery-main-img-wrapper {
+            background-color: #ffffff;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-main-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: all 0.25s ease;
+        }
+        .gallery-thumbs-row {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+        .gallery-thumb {
+            width: 72px;
+            height: 72px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--color-border);
+            background: #ffffff;
+            padding: 4px;
+            cursor: pointer;
+            object-fit: contain;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        .gallery-thumb:hover {
+            border-color: var(--color-primary);
+        }
+        .gallery-thumb.active {
+            border-color: var(--color-accent);
+            transform: scale(1.05);
+        }
+</style>
 </head>
 <body>
         <header class="site-header">
@@ -229,9 +278,35 @@
 
             document.title = `${product.name} | Materiales Chilavert`;
 
-            const galleryHtml = product.image 
-                ? `<div class="product-gallery"><img src="${product.image}" alt="${product.name}"></div>`
-                : `<div class="product-gallery"><i class="fa-solid fa-image"></i></div>`;
+            const imgList = (product.images && product.images.length > 0) 
+                ? product.images 
+                : (product.image ? [product.image] : []);
+
+            let galleryHtml = "";
+            if (imgList.length > 1) {
+                galleryHtml = `
+                <div class="product-gallery">
+                    <div class="gallery-main-img-wrapper">
+                        <img src="${imgList[0]}" id="main-product-img" alt="${product.name}">
+                    </div>
+                    <div class="gallery-thumbs-row">
+                        ${imgList.map((src, idx) => `
+                            <img src="${src}" class="gallery-thumb ${idx === 0 ? 'active' : ''}" onclick="document.getElementById('main-product-img').src='${src}'; document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');" alt="Vista ${idx+1}">
+                        `).join("")}
+                    </div>
+                </div>
+                `;
+            } else if (imgList.length === 1) {
+                galleryHtml = `
+                <div class="product-gallery">
+                    <div class="gallery-main-img-wrapper">
+                        <img src="${imgList[0]}" alt="${product.name}">
+                    </div>
+                </div>
+                `;
+            } else {
+                galleryHtml = `<div class="product-gallery"><div class="gallery-main-img-wrapper"><i class="fa-solid fa-image" style="font-size: 3rem; color: #cbd5e1;"></i></div></div>`;
+            }
 
             container.innerHTML = `
                 ${galleryHtml}

@@ -94,6 +94,7 @@ const catalogData = {
             category: "cementos", 
             name: "Cemento Rápido Juntamax Gris 1 kg", 
             image: "img/products/cemento-rapido-juntamax.webp", 
+            images: ["img/products/cemento-rapido-juntamax.webp", "img/products/cemento-rapido-juntamax-info.webp"],
             description: "Cemento hidráulico de fraguado instantáneo para reparaciones urgentes, obturación de filtraciones de agua y amurados rápidos.", 
             brand: "Juntamax", 
             features: ["Bolsa 1 kg", "Fraguado instantáneo", "Fragua bajo agua", "Color Gris"] 
@@ -130,11 +131,12 @@ const catalogData = {
         { 
             id: "03310", 
             category: "aridos", 
-            name: "Piedra Partida Binder (a Granel y Bolsón)", 
+            name: "Piedra Partida Binder en Bolsón (1 m³ / 1/2 m³)", 
             image: "img/products/piedra-partida-binder.webp", 
-            description: "Piedra partida fina tipo binder seleccionada para pavimentos, contrapisos especiales, premoldeados y hormigón fino.", 
-            brand: "Granel / Bolsón", 
-            features: ["Por m³ a granel o bolsón 1 m³", "Granulometría fina Binder", "Ideal contrapisos y premoldeados"] 
+            images: ["img/products/piedra-partida-binder.webp", "img/products/piedra-partida-binder-mano.webp"],
+            description: "Piedra partida fina tipo binder en bolsón de 1 m³ o medio bolsón (1/2 m³) para contrapisos especiales, pavimentos y premoldeados.", 
+            brand: "Bolsón Big Bag", 
+            features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Granulometría fina Binder", "Acopio limpio y sin desperdicio"] 
         },
         { 
             id: "03500", 
@@ -148,20 +150,22 @@ const catalogData = {
         { 
             id: "03550", 
             category: "aridos", 
-            name: "Cascote Granza Limpio (a Granel y Bolsón)", 
+            name: "Cascote Granza Limpio en Bolsón (1 m³ / 1/2 m³)", 
             image: "img/products/cascote-granza.jpg", 
-            description: "Granza de cascote triturado limpio y clasificado de granulometría pareja para contrapisos alivianados y rellenos firmes.", 
-            brand: "Granel / Bolsón", 
-            features: ["Por m³ a granel o bolsón 1 m³", "Limpio y libre de tierra", "Granulometría seleccionada"] 
+            images: ["img/products/cascote-granza.jpg", "img/products/cascote-granza-detalle.jpg"],
+            description: "Granza de cascote triturado limpio y clasificado en bolsón de 1 m³ o medio bolsón (1/2 m³) para contrapisos alivianados y rellenos.", 
+            brand: "Bolsón Big Bag", 
+            features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Limpio y libre de tierra", "Granulometría seleccionada"] 
         },
         { 
             id: "03560", 
             category: "aridos", 
-            name: "Cascote Mezcla / Picado (a Granel y Bolsón)", 
+            name: "Cascote Mezcla / Picado en Bolsón (1 m³ / 1/2 m³)", 
             image: "img/products/cascote-mezcla.jpg", 
-            description: "Cascote de ladrillo y revoque triturado y picado seleccionado para contrapisos firmes, bases y nivelaciones.", 
-            brand: "Granel / Bolsón", 
-            features: ["Por m³ a granel o bolsón 1 m³", "Ideal contrapisos de cascote", "Excelente drenaje y compactación"] 
+            images: ["img/products/cascote-mezcla.jpg", "img/products/cascote-mezcla-detalle.webp"],
+            description: "Cascote de ladrillo y revoque picado seleccionado en bolsón de 1 m³ o medio bolsón (1/2 m³) para contrapisos firmes y bases.", 
+            brand: "Bolsón Big Bag", 
+            features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Ideal contrapisos de cascote", "Excelente drenaje y compactación"] 
         },
 
         // LADRILLOS Y BLOQUES
