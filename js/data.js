@@ -141,11 +141,11 @@ const catalogData = {
         { 
             id: "03500", 
             category: "aridos", 
-            name: "Bolsón de Áridos (Arena / Piedra / Cascote)", 
-            image: "img/products/bolson-aridos.png", 
-            description: "Bolsón reforzado big bag de 1 m³ para entrega limpia y acopio ordenado en obra.", 
+            name: "Bolsón de Piedra Partida 6/20 (1 m³)", 
+            image: "img/products/bolson-piedra-partida-6-20.webp", 
+            description: "Piedra partida granítica 6/20 en bolsón big bag reforzado de 1 m³ (aprox. 1500 kg) para hormigón armado, losas, columnas y bases con entrega limpia en obra.", 
             brand: "Bolsón Big Bag", 
-            features: ["Capacidad 1 m³", "Fácil descarga en vereda u obra", "Sin desperdicio"] 
+            features: ["Capacidad 1 m³ (Big Bag)", "Granulometría estándar 6/20", "Ideal hormigón armado y bases", "Entrega y descarga con hidrogrúa"] 
         },
         { 
             id: "03550", 
