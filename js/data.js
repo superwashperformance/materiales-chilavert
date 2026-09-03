@@ -192,20 +192,23 @@ const catalogData = {
             category: "ladrillos", 
             name: "Ladrillo Común de Campo Seleccionado", 
             image: "img/products/ladrillo-comun.webp", 
-            images: ["img/products/ladrillo-comun.webp", "img/products/ladrillo-comun-pallet.webp"],
             description: "Ladrillo común macizo de primera calidad cocido a leña. Ideal para mampostería portante, muros vistos, hornos y parrillas.", 
             brand: "Seleccionado", 
-            features: ["Por unidad, medio mil o mil (pallet)", "Cocción tradicional a leña", "Alta resistencia y adherencia"] 
+            features: ["Por unidad, medio mil o mil", "Cocción tradicional a leña", "Alta resistencia y adherencia"] 
         },
         { 
             id: "04050", 
             category: "ladrillos", 
-            name: "Ladrillo Refractario para Parrillas y Hornos", 
-            image: "img/products/ladrillo-refractario.webp", 
-            images: ["img/products/ladrillo-refractario.webp", "img/products/ladrillo-refractario-pila.webp"],
-            description: "Ladrillo refractario de alta resistencia térmica para construcción y revestimiento de parrillas, hornos a leña y hogares.", 
-            brand: "Refractarios", 
-            features: ["Resistencia a altas temperaturas", "Para parrillas, hornos y hogares", "Medida estándar"] 
+            name: "Ladrillo Vista Córdoba Seleccionado", 
+            image: "img/products/ladrillo-vista-cordoba.webp", 
+            images: [
+                "img/products/ladrillo-vista-cordoba.webp", 
+                "img/products/ladrillo-vista-cordoba-pila.webp", 
+                "img/products/ladrillo-vista-cordoba-pallet.webp"
+            ],
+            description: "Ladrillo a la vista semiprensado tipo Córdoba de terminación pareja, aristas vivas y color uniforme. Ideal para fachadas, muros vistos, frentes y parrillas.", 
+            brand: "Córdoba Seleccionado", 
+            features: ["Por unidad o pallet enfardado", "Terminación pareja para pared a la vista", "Procedencia Córdoba", "Alta resistencia y estética"] 
         },
         { 
             id: "04410", 
