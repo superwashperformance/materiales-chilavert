@@ -174,9 +174,40 @@ const catalogData = {
             category: "ladrillos", 
             name: "Ladrillo Común de Campo Seleccionado", 
             image: "img/products/ladrillo-comun.webp", 
+            images: ["img/products/ladrillo-comun.webp", "img/products/ladrillo-comun-pallet.webp"],
             description: "Ladrillo común macizo de primera calidad cocido a leña. Ideal para mampostería portante, muros vistos, hornos y parrillas.", 
             brand: "Seleccionado", 
             features: ["Por unidad, medio mil o mil (pallet)", "Cocción tradicional a leña", "Alta resistencia y adherencia"] 
+        },
+        { 
+            id: "04050", 
+            category: "ladrillos", 
+            name: "Ladrillo Refractario para Parrillas y Hornos", 
+            image: "img/products/ladrillo-refractario.webp", 
+            images: ["img/products/ladrillo-refractario.webp", "img/products/ladrillo-refractario-pila.webp"],
+            description: "Ladrillo refractario de alta resistencia térmica para construcción y revestimiento de parrillas, hornos a leña y hogares.", 
+            brand: "Refractarios", 
+            features: ["Resistencia a altas temperaturas", "Para parrillas, hornos y hogares", "Medida estándar"] 
+        },
+        { 
+            id: "04410", 
+            category: "ladrillos", 
+            name: "Ladrillo de Telgopor para Losa 10 x 42 x 100 cm", 
+            image: "img/products/ladrillo-telgopor-10.webp", 
+            images: ["img/products/ladrillo-telgopor-10.webp", "img/products/ladrillo-telgopor-perfil.webp"],
+            description: "Bloque de poliestireno expandido (telgopor EPS) de 10 cm de espesor para losas con viguetas pretensadas. Alivia el peso de la estructura y brinda máxima aislación termoacústica.", 
+            brand: "EPS / Isopor", 
+            features: ["Medidas: 10 cm alto x 42 cm ancho x 1 mt largo", "Aislación térmica y acústica", "Liviano (reduce peso de losa)", "Para viguetas pretensadas"] 
+        },
+        { 
+            id: "04412", 
+            category: "ladrillos", 
+            name: "Ladrillo de Telgopor para Losa 12 x 42 x 100 cm", 
+            image: "img/products/ladrillo-telgopor-12.webp", 
+            images: ["img/products/ladrillo-telgopor-12.webp", "img/products/ladrillo-telgopor-perfil.webp"],
+            description: "Bloque de poliestireno expandido (telgopor EPS) de 12 cm de espesor para losas con viguetas pretensadas de mayor luz o aislación. Reduce costos y tiempos de obra.", 
+            brand: "EPS / Isopor", 
+            features: ["Medidas: 12 cm alto x 42 cm ancho x 1 mt largo", "Aislación térmica y acústica superior", "Ultra liviano y resistente al pisado", "Para viguetas pretensadas"] 
         },
         { 
             id: "05006", 
