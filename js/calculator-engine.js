@@ -11,8 +11,8 @@ const ConstructionCalculator = {
                 { id: "hueco18", name: "Ladrillo Cerámico Hueco 18x18x33 (Muro 18 cm)", unit: "m2" },
                 { id: "portante12", name: "Ladrillo Cerámico Portante 12x19x33", unit: "m2" },
                 { id: "portante18", name: "Ladrillo Cerámico Portante 18x19x33", unit: "m2" },
-                { id: "bloque20", name: "Bloque de Hormigón 20x19x39", unit: "m2" },
-                { id: "bloque12", name: "Bloque de Hormigón 12x19x39", unit: "m2" },
+                { id: "bloque20", name: "Bloque de Hormigón 20x20x40", unit: "m2" },
+                { id: "bloque12", name: "Bloque de Hormigón 13x20x40", unit: "m2" },
                 { id: "comun", name: "Ladrillo Común Macizo (Pared de 15 cm)", unit: "m2" },
                 { id: "comun30", name: "Ladrillo Común Macizo (Pared de 30 cm)", unit: "m2" }
             ]
@@ -167,11 +167,11 @@ const ConstructionCalculator = {
                 materials.push({ name: "Cal Hidratada Extra", spec: "Bolsas de 25 kg", qty: Math.ceil(area * 0.32), unit: "bolsas" });
                 materials.push({ name: "Arena Gruesa", spec: "Acopio a granel o bolsón", qty: Number((area * 0.06).toFixed(2)), unit: "m³" });
             } else if (itemId === "bloque20") {
-                materials.push({ name: "Bloque de Hormigón 20x19x39", spec: "Unidades", qty: Math.ceil(area * 12.5), unit: "unid." });
+                materials.push({ name: "Bloque de Hormigón 20x20x40", spec: "Unidades", qty: Math.ceil(area * 12.5), unit: "unid." });
                 materials.push({ name: "Cemento Portland CPC40 Avellaneda", spec: "Bolsas de 50 kg", qty: Math.ceil(area * 0.18), unit: "bolsas" });
                 materials.push({ name: "Arena Gruesa", spec: "Acopio a granel o bolsón", qty: Number((area * 0.045).toFixed(2)), unit: "m³" });
             } else if (itemId === "bloque12") {
-                materials.push({ name: "Bloque de Hormigón 12x19x39", spec: "Unidades", qty: Math.ceil(area * 12.5), unit: "unid." });
+                materials.push({ name: "Bloque de Hormigón 13x20x40", spec: "Unidades", qty: Math.ceil(area * 12.5), unit: "unid." });
                 materials.push({ name: "Cemento Portland CPC40 Avellaneda", spec: "Bolsas de 50 kg", qty: Math.ceil(area * 0.12), unit: "bolsas" });
                 materials.push({ name: "Arena Gruesa", spec: "Acopio a granel o bolsón", qty: Number((area * 0.03).toFixed(2)), unit: "m³" });
             } else if (itemId === "comun") {

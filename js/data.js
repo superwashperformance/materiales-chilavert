@@ -167,6 +167,24 @@ const catalogData = {
             brand: "Bolsón Big Bag", 
             features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Ideal contrapisos de cascote", "Excelente drenaje y compactación"] 
         },
+        { 
+            id: "03610", 
+            category: "aridos", 
+            name: "Isocret Agregado Ultraliviano 85 L (Estisol)", 
+            image: "img/products/isocret-85l.webp", 
+            description: "Perlas vírgenes de EPS Isopor aditivadas con EIA para realizar contrapisos y hormigones ultralivianos de elevado poder aislante térmico y acústico.", 
+            brand: "Grupo Estisol", 
+            features: ["Bolsa 85 Litros", "Solo agregar cemento y agua", "Aislación térmica y acústica", "Ideal contrapisos livianos y pendientes"] 
+        },
+        { 
+            id: "03620", 
+            category: "aridos", 
+            name: "Isocret Agregado Ultraliviano 170 L (Estisol)", 
+            image: "img/products/isocret-170l.webp", 
+            description: "Perlas vírgenes de EPS Isopor aditivadas para hormigones ultralivianos y contrapisos de gran rendimiento aislante (rinde 5 bolsas por m³).", 
+            brand: "Grupo Estisol", 
+            features: ["Bolsa 170 Litros", "Rinde 5 bolsas por m³", "Solo agregar cemento y agua", "Aislante térmico y acústico"] 
+        },
 
         // LADRILLOS Y BLOQUES
         { 
