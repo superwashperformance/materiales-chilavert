@@ -278,29 +278,38 @@ const catalogData = {
         { 
             id: "06012", 
             category: "ladrillos", 
-            name: "Bloque de Hormigón 12x20x40", 
+            name: "Bloque de Hormigón 13x20x40", 
             image: "img/products/bloque-hormigon-12.webp", 
-            description: "Bloque de hormigón vibrado de 12 cm de espesor para tabiques y muros perimetrales.", 
+            description: "Bloque de hormigón vibrado de 13 cm de espesor para tabiques, cerramientos y muros perimetrales.", 
             brand: "Vibrado Standard", 
-            features: ["Medida 12x20x40 cm", "12.5 u/m²", "Excelente solidez"] 
+            features: ["Medida 13x20x40 cm", "12.5 u/m²", "Excelente solidez"] 
         },
         { 
             id: "06020", 
             category: "ladrillos", 
-            name: "Bloque de Hormigón 19x20x40 (20 cm)", 
+            name: "Bloque de Hormigón 20x20x40", 
             image: "img/products/bloque-hormigon-20.webp", 
             description: "Bloque de hormigón estructural estándar de 20 cm para muros portantes y de contención.", 
             brand: "Vibrado Standard", 
-            features: ["Medida 19x20x40 cm", "12.5 u/m²", "Apto armado con hierros"] 
+            features: ["Medida 20x20x40 cm", "12.5 u/m²", "Apto armado con hierros"] 
         },
         { 
             id: "06025", 
             category: "ladrillos", 
-            name: "Bloque de Hormigón Split Texturado", 
+            name: "Bloque Símil Piedra 20x20x40", 
             image: "img/products/bloque-hormigon-split.webp", 
-            description: "Bloque de hormigón con terminación rústica símil piedra para muros a la vista.", 
-            brand: "Vibrado Decorativo", 
-            features: ["Medida 19x20x40 cm", "Terminación rústica", "No requiere revoque"] 
+            description: "Bloque de hormigón con terminación rústica símil piedra split de 20 cm para muros a la vista decorativos sin revoque.", 
+            brand: "Vibrado Símil Piedra", 
+            features: ["Medida 20x20x40 cm", "Terminación rústica símil piedra", "No requiere revoque", "Muros vistos y frentes"] 
+        },
+        { 
+            id: "06026", 
+            category: "ladrillos", 
+            name: "Bloque Símil Piedra 13x20x40", 
+            image: "img/products/bloque-hormigon-split.webp", 
+            description: "Bloque de hormigón con terminación rústica símil piedra split de 13 cm de espesor para tabiques y medianeras a la vista.", 
+            brand: "Vibrado Símil Piedra", 
+            features: ["Medida 13x20x40 cm", "Terminación rústica símil piedra", "Ideal muros vistos y frentes", "Rendimiento 12.5 u/m²"] 
         },
 
         // HIERROS Y ACERO
