@@ -172,10 +172,11 @@ const catalogData = {
         { 
             id: "04000", 
             category: "ladrillos", 
-            name: "Ladrillo Común de Campo", 
-            description: "Ladrillo de campo de primera calidad cocido a leña.", 
+            name: "Ladrillo Común de Campo Seleccionado", 
+            image: "img/products/ladrillo-comun.webp", 
+            description: "Ladrillo común macizo de primera calidad cocido a leña. Ideal para mampostería portante, muros vistos, hornos y parrillas.", 
             brand: "Seleccionado", 
-            features: ["Por unidad o pallet (1000 u)", "Excelente absorción y dureza"] 
+            features: ["Por unidad, medio mil o mil (pallet)", "Cocción tradicional a leña", "Alta resistencia y adherencia"] 
         },
         { 
             id: "05006", 
