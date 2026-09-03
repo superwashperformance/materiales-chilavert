@@ -19,7 +19,7 @@ const catalogData = {
             name: "Ladrillos y Bloques", 
             image: "img/categories/cat-ladrillos.webp", 
             icon: "fa-border-all", 
-            description: "Ladrillos comunes, cerámicos huecos, portantes y bloques de hormigón." 
+            description: "Ladrillos comunes, cerámicos huecos, portantes, tejas y bloques de hormigón." 
         },
         { 
             id: "hierros", 
@@ -237,6 +237,20 @@ const catalogData = {
             description: "Bloque de poliestireno expandido (telgopor EPS) de 12 cm de espesor para losas con viguetas pretensadas de mayor luz o aislación. Reduce costos y tiempos de obra.", 
             brand: "EPS / Isopor", 
             features: ["Medidas: 12 cm alto x 42 cm ancho x 1 mt largo", "Aislación térmica y acústica superior", "Ultra liviano y resistente al pisado", "Para viguetas pretensadas"] 
+        },
+        { 
+            id: "04500", 
+            category: "ladrillos", 
+            name: "Teja Francesa Cerámica Losa Olavarría", 
+            image: "img/products/teja-francesa-losa-olavarria.webp", 
+            images: [
+                "img/products/teja-francesa-losa-olavarria.webp", 
+                "img/products/teja-francesa-losa-olavarria-dorso.webp", 
+                "img/products/teja-francesa-losa-olavarria-pila.webp"
+            ],
+            description: "Teja francesa de cerámica natural prensada y cocida a alta temperatura por Losa Olavarría. Diseño tradicional de encastre perfecto para techos y cubiertas inclinadas de máxima durabilidad e impermeabilidad.", 
+            brand: "Losa Olavarría", 
+            features: ["Rendimiento: ~14.5 tejas por m²", "Fabricación tradicional Losa Olavarría", "Excelente encastre y resistencia al granizo", "Color terracota natural"] 
         },
         { 
             id: "05006", 
