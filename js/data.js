@@ -89,8 +89,26 @@ const catalogData = {
             brand: "El Milagro / Calidra", 
             features: ["Bolsa 25 kg", "San Juan", "Blancura y fineza superior"] 
         },
+        { 
+            id: "01201", 
+            category: "cementos", 
+            name: "Cemento Rápido Juntamax Gris 1 kg / 5 kg", 
+            image: "img/products/cemento-rapido-juntamax.webp", 
+            description: "Cemento hidráulico de fraguado instantáneo para reparaciones urgentes, obturación de filtraciones de agua y amurados rápidos.", 
+            brand: "Juntamax", 
+            features: ["Bolsa 1 kg / 5 kg", "Fraguado instantáneo", "Fragua bajo agua", "Color Gris"] 
+        },
 
         // ÁRIDOS
+        { 
+            id: "03050", 
+            category: "aridos", 
+            name: "Bolsón de Arena de Río Limpia (1 m³)", 
+            image: "img/products/bolson-arena-rio.webp", 
+            description: "Arena clasificada y lavada en bolsón big bag de 1 m³ (aprox. 1500 kg) para un acopio ordenado y sin desperdicio en obra.", 
+            brand: "Bolsón Big Bag", 
+            features: ["Capacidad 1 m³ (Big Bag)", "Arena limpia y lavada", "Entrega y descarga con hidrogrúa"] 
+        },
         { 
             id: "03000", 
             category: "aridos", 
