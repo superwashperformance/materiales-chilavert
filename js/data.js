@@ -504,28 +504,12 @@ const catalogData = {
         { 
             id: "14100", 
             category: "pinturas", 
-            name: "Weberpint Látex Exterior-Interior 20 L", 
+            name: "Weberpint Látex Exterior-Interior", 
             image: "img/products/weberpint-latex.jpg", 
-            description: "Pintura látex acrílica de máxima cobertura, alta blancura y resistencia a la intemperie.", 
+            description: "Pintura látex acrílica mate de máxima cobertura, blancura superior y alta resistencia a la intemperie y lavados.", 
             brand: "Weber / Saint-Gobain", 
-            features: ["Balde 20 Litros", "Exterior e Interior", "Excelente poder cubritivo"] 
-        },
-        { 
-            id: "14105", 
-            category: "pinturas", 
-            name: "Weberpint Látex Exterior-Interior 10 kg / 4 kg", 
-            image: "img/products/weberpint-latex.jpg", 
-            description: "Látex para muros exteriores e interiores en presentaciones medianas y chicas.", 
-            brand: "Weber / Saint-Gobain", 
-            features: ["Balde 10 kg / Pote 4 kg", "Lavable y anti-hongos", "Fácil aplicación"] 
-        },
-        { 
-            id: "14120", 
-            category: "pinturas", 
-            name: "Fijador Sellador Concentrado 4 L", 
-            description: "Fijador al agua concentrado para acondicionar superficies de yeso, revoque o enduido.", 
-            brand: "Profesional", 
-            features: ["Bidón 4 Litros", "Rinde hasta 60 m² diluido", "Uniforma la absorción"] 
+            variants: ["4 Litros", "10 Litros", "20 Litros"],
+            features: ["Presentaciones: 4 L, 10 L y 20 L", "Exterior e Interior", "Excelente poder cubritivo y lavable", "Anti-hongos"] 
         },
 
     ]

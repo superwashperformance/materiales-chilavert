@@ -85,6 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
             const msg = encodeURIComponent(`Hola, me interesa consultar por el producto: ${prod.name}`);
             return `
+            const variantsSelectHtml = (prod.variants && prod.variants.length > 0) ? `
+                <div style="margin: 0.5rem 0 0.25rem;">
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-primary); margin-bottom: 3px;">Presentación / Medida:</label>
+                    <select id="var-${prod.id}" style="width: 100%; padding: 0.45rem 0.6rem; border-radius: 4px; border: 1px solid var(--color-border); font-size: 0.85rem; font-weight: 600; color: var(--color-primary); background: #f8fafc;">
+                        ${prod.variants.map(v => `<option value="${v}">${v}</option>`).join("")}
+                    </select>
+                </div>
+            ` : "";
+
+            return `
             <div class="card">
                 ${prodImg}
                 <div class="card-body">
@@ -92,6 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3 class="card-title">${prod.name}</h3>
                     <p class="card-desc">${prod.description}</p>
                     
+                    ${variantsSelectHtml}
+
                     <!-- Selector de Cantidad en la Tarjeta -->
                     <div class="card-qty-row">
                         <span class="card-qty-label">Cantidad:</span>
@@ -103,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
 
                     <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
-                        <button class="btn btn-accent" style="width: 100%; padding: 0.65rem; font-size: 0.92rem;" onclick="let qty = parseInt(document.getElementById('qty-${prod.id}').value) || 1; CartManager.addItem('${prod.id}', qty);">
+                        <button class="btn btn-accent" style="width: 100%; padding: 0.65rem; font-size: 0.92rem;" onclick="let qty = parseInt(document.getElementById('qty-${prod.id}').value) || 1; let varEl = document.getElementById('var-${prod.id}'); let selVar = varEl ? varEl.value : ''; CartManager.addItem('${prod.id}', qty, selVar);">
                             <i class="fa-solid fa-cart-plus" style="margin-right: 6px;"></i> Agregar a Cotización
                         </button>
                         <div style="display: flex; gap: 0.5rem;">
@@ -113,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             </div>
+            `;
             `;
         }).join("");
     }
