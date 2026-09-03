@@ -338,11 +338,57 @@ const catalogData = {
         { 
             id: "09001", 
             category: "hierros", 
-            name: "Barra Hierro ADN 420 - 6 mm a 25 mm", 
+            name: "Barra Hierro ADN 420 (Barras 12 mt)", 
             image: "img/categories/cat-hierros.png", 
-            description: "Barras de acero conformadas de dureza natural para estructuras de hormigón armado.", 
-            brand: "Acindar", 
-            features: ["Barras 12 metros", "Norma IRAM-IAS U 500-06", "Diámetros 6, 8, 10, 12, 16, 20, 25 mm"] 
+            description: "Barras de acero nervuradas ADN 420 de dureza natural para estructuras de hormigón armado, losas, columnas, vigas y bases.", 
+            brand: "Acindar / Acerbrag", 
+            variants: ["Ø 6 mm", "Ø 8 mm", "Ø 10 mm", "Ø 12 mm", "Ø 16 mm", "Ø 20 mm", "Ø 25 mm"],
+            features: ["Largo estándar: 12 metros", "Norma IRAM-IAS U 500-06", "Diámetros disponibles: 6, 8, 10, 12, 16, 20 y 25 mm", "Acero conformado de alta adherencia"] 
+        },
+        { 
+            id: "09006", 
+            category: "hierros", 
+            name: "Barra Hierro ADN 420 - Ø 6 mm (12 mt)", 
+            image: "img/categories/cat-hierros.png", 
+            description: "Barra de acero conformado de 6 mm de diámetro y 12 metros de largo. Ideal para estribos y armaduras secundarias.", 
+            brand: "Acindar / Acerbrag", 
+            features: ["Diámetro: 6 mm", "Largo: 12 metros", "Norma IRAM-IAS U 500-06"] 
+        },
+        { 
+            id: "09008", 
+            category: "hierros", 
+            name: "Barra Hierro ADN 420 - Ø 8 mm (12 mt)", 
+            image: "img/categories/cat-hierros.png", 
+            description: "Barra de acero conformado de 8 mm de diámetro y 12 metros de largo. Para armaduras de vigas, columnas y losas.", 
+            brand: "Acindar / Acerbrag", 
+            features: ["Diámetro: 8 mm", "Largo: 12 metros", "Norma IRAM-IAS U 500-06"] 
+        },
+        { 
+            id: "09010", 
+            category: "hierros", 
+            name: "Barra Hierro ADN 420 - Ø 10 mm (12 mt)", 
+            image: "img/categories/cat-hierros.png", 
+            description: "Barra de acero conformado de 10 mm de diámetro y 12 metros de largo para estructuras de hormigón armado.", 
+            brand: "Acindar / Acerbrag", 
+            features: ["Diámetro: 10 mm", "Largo: 12 metros", "Norma IRAM-IAS U 500-06"] 
+        },
+        { 
+            id: "09012", 
+            category: "hierros", 
+            name: "Barra Hierro ADN 420 - Ø 12 mm (12 mt)", 
+            image: "img/categories/cat-hierros.png", 
+            description: "Barra de acero conformado de 12 mm de diámetro y 12 metros de largo para vigas principales, bases y columnas.", 
+            brand: "Acindar / Acerbrag", 
+            features: ["Diámetro: 12 mm", "Largo: 12 metros", "Norma IRAM-IAS U 500-06"] 
+        },
+        { 
+            id: "09016", 
+            category: "hierros", 
+            name: "Barra Hierro ADN 420 - Ø 16 mm (12 mt)", 
+            image: "img/categories/cat-hierros.png", 
+            description: "Barra de acero conformado de 16 mm de diámetro y 12 metros de largo para estructuras de alta carga.", 
+            brand: "Acindar / Acerbrag", 
+            features: ["Diámetro: 16 mm", "Largo: 12 metros", "Norma IRAM-IAS U 500-06"] 
         },
         { 
             id: "09011", 
@@ -352,6 +398,15 @@ const catalogData = {
             description: "Malla de acero electrosoldada para losas, plateas de fundación y contrapisos armados.", 
             brand: "Acindar", 
             features: ["Panel 2 x 5 mts", "Malla electrosoldada", "Alta resistencia mecánica"] 
+        },
+        { 
+            id: "09050", 
+            category: "hierros", 
+            name: "Alambre de Fardo Negro Recocido", 
+            image: "img/categories/cat-hierros.png", 
+            description: "Alambre negro recocido para ataduras de armaduras de hierro y encofrados.", 
+            brand: "Acindar", 
+            features: ["Por kilo o rollo", "Fácil maleabilidad", "Uso profesional en obra"] 
         },
 
         // ADHESIVOS Y PASTINAS

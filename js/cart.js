@@ -18,21 +18,26 @@ const CartManager = {
         this.renderDrawer();
     },
 
-    addItem(productId, qty = 1) {
+    addItem(productId, qty = 1, variant = '') {
         if (typeof catalogData === 'undefined') return;
         const product = catalogData.products.find(p => p.id === productId);
         if (!product) return;
 
+        const itemKey = variant ? `${product.id}_${variant}` : product.id;
+        const displayName = variant ? `${product.name} — ${variant}` : product.name;
+
         let items = this.getItems();
-        const existingIdx = items.findIndex(i => i.id === productId);
+        const existingIdx = items.findIndex(i => i.id === itemKey);
 
         if (existingIdx >= 0) {
             items[existingIdx].qty += qty;
         } else {
             const catObj = catalogData.categories.find(c => c.id === product.category);
             items.push({
-                id: product.id,
-                name: product.name,
+                id: itemKey,
+                productId: product.id,
+                name: displayName,
+                variant: variant,
                 category: catObj ? catObj.name : '',
                 image: product.image || (catObj ? catObj.image : ''),
                 qty: qty
@@ -40,7 +45,7 @@ const CartManager = {
         }
 
         this.saveItems(items);
-        this.showToast(`Agregado: ${product.name} (x${qty})`);
+        this.showToast(`Agregado: ${displayName} (x${qty})`);
     },
 
     removeItem(productId) {

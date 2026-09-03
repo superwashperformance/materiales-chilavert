@@ -276,6 +276,21 @@
                 </ul>`;
             }
 
+            let variantsHtml = "";
+            let selectedVariant = (product.variants && product.variants.length > 0) ? product.variants[0] : "";
+            if (product.variants && product.variants.length > 0) {
+                variantsHtml = `
+                <div class="variant-selector-box">
+                    <span class="variant-selector-title"><i class="fa-solid fa-ruler-horizontal" style="color: var(--color-accent);"></i> Seleccionar Diámetro / Medida:</span>
+                    <div class="variant-pills-row" id="variant-pills-row">
+                        ${product.variants.map((v, i) => `
+                            <button type="button" class="variant-pill ${i === 0 ? 'active' : ''}" data-variant="${v}">${v}</button>
+                        `).join("")}
+                    </div>
+                </div>
+                `;
+            }
+
             document.title = `${product.name} | Materiales Chilavert`;
 
             const imgList = (product.images && product.images.length > 0) 
@@ -321,20 +336,22 @@
                         <h3>¿Necesitás este producto?</h3>
                         <p class="mb-md">Agregalo a tu cotización o consultanos directamente por WhatsApp.</p>
                         
+                        ${variantsHtml}
+
                         <div class="detail-qty-wrapper">
                             <label style="font-weight: 600;">Cantidad:</label>
                             <div class="detail-qty-control">
-                                <button onclick="let inp = document.getElementById('detail-qty-input'); if(parseInt(inp.value)>1) inp.value=parseInt(inp.value)-1;">-</button>
-                                <input type="number" id="detail-qty-input" value="1" min="1" step="1">
-                                <button onclick="let inp = document.getElementById('detail-qty-input'); inp.value=parseInt(inp.value)+1;">+</button>
+                                <button type="button" onclick="let inp = document.getElementById('detail-qty-input'); if(parseInt(inp.value)>1) inp.value=parseInt(inp.value)-1; updateDetailWa();">-</button>
+                                <input type="number" id="detail-qty-input" value="1" min="1" step="1" oninput="updateDetailWa();">
+                                <button type="button" onclick="let inp = document.getElementById('detail-qty-input'); inp.value=parseInt(inp.value)+1; updateDetailWa();">+</button>
                             </div>
                         </div>
 
                         <div style="display: flex; gap: 0.75rem; flex-direction: column;">
-                            <button class="btn btn-accent" style="width: 100%; padding: 0.9rem; font-size: 1.05rem;" onclick="CartManager.addItem('${product.id}', parseInt(document.getElementById('detail-qty-input').value));">
+                            <button type="button" class="btn btn-accent" style="width: 100%; padding: 0.9rem; font-size: 1.05rem;" id="btn-add-detail">
                                 <i class="fa-solid fa-cart-plus" style="margin-right: 8px;"></i> Agregar a mi Cotización
                             </button>
-                            <a href="${waUrl}" class="btn btn-whatsapp" style="width: 100%;" target="_blank">
+                            <a href="${waUrl}" class="btn btn-whatsapp" id="detail-wa-btn" style="width: 100%;" target="_blank">
                                 <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Consultar directo por WhatsApp
                             </a>
                             <a href="calculadora.html" class="btn btn-primary" style="width: 100%;">
@@ -344,7 +361,41 @@
                     </div>
                 </div>
             `;
-        });
+        
+            // Eventos de Variantes
+            const variantPills = container.querySelectorAll(".variant-pill");
+            variantPills.forEach(pill => {
+                pill.addEventListener("click", () => {
+                    variantPills.forEach(p => p.classList.remove("active"));
+                    pill.classList.add("active");
+                    selectedVariant = pill.getAttribute("data-variant");
+                    updateDetailWa();
+                });
+            });
+
+            function updateDetailWa() {
+                const qty = parseInt(document.getElementById("detail-qty-input").value) || 1;
+                const waBtn = document.getElementById("detail-wa-btn");
+                if(waBtn) {
+                    let msg = `Hola, me interesa consultar por el producto: ${product.name}`;
+                    if(selectedVariant) {
+                        msg += ` (Medida: ${selectedVariant})`;
+                    }
+                    msg += ` - Cantidad: ${qty}`;
+                    waBtn.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+                }
+            }
+
+            window.updateDetailWa = updateDetailWa;
+
+            const addBtn = document.getElementById("btn-add-detail");
+            if(addBtn) {
+                addBtn.addEventListener("click", () => {
+                    const qty = parseInt(document.getElementById("detail-qty-input").value) || 1;
+                    CartManager.addItem(product.id, qty, selectedVariant);
+                });
+            }
+});
     </script>
 </body>
 </html>
