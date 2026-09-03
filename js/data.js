@@ -203,12 +203,20 @@ const catalogData = {
             image: "img/products/ladrillo-vista-cordoba.webp", 
             images: [
                 "img/products/ladrillo-vista-cordoba.webp", 
-                "img/products/ladrillo-vista-cordoba-pila.webp", 
                 "img/products/ladrillo-vista-cordoba-pallet.webp"
             ],
             description: "Ladrillo a la vista semiprensado tipo Córdoba de terminación pareja, aristas vivas y color uniforme. Ideal para fachadas, muros vistos, frentes y parrillas.", 
             brand: "Córdoba Seleccionado", 
             features: ["Por unidad o pallet enfardado", "Terminación pareja para pared a la vista", "Procedencia Córdoba", "Alta resistencia y estética"] 
+        },
+        { 
+            id: "04060", 
+            category: "ladrillos", 
+            name: "Ladrillo Media Vista Mar del Plata", 
+            image: "img/products/ladrillo-media-vista-mdp.webp", 
+            description: "Ladrillo media vista tipo Mar del Plata de excelente cocción, dureza y tonalidad rojiza pareja para muros vistos, frentes y mampostería decorativa.", 
+            brand: "Mar del Plata", 
+            features: ["Por unidad o pallet", "Terminación media vista", "Procedencia Mar del Plata", "Alta resistencia a la intemperie"] 
         },
         { 
             id: "04410", 
