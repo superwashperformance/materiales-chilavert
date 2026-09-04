@@ -572,10 +572,21 @@ const catalogData = {
         { 
             id: "13230", 
             category: "aislantes", 
-            name: "Membrana Asfáltica 4 mm con Aluminio", 
-            description: "Membrana asfáltica normalizada con aluminio compuesto flexible para impermeabilización de techos y terrazas.", 
-            brand: "Megaflex / Ormiflex", 
-            features: ["Rollo 10 m² (1 x 10 m)", "Espesor 4 mm", "Aluminio no crack"] 
+            name: "Membrana Asfáltica 4 mm con Aluminio (Emapi Emacober)", 
+            image: "img/products/membrana-asfaltica-emapi-emacober.webp", 
+            images: [
+                "img/products/membrana-asfaltica-emapi-emacober.webp", 
+                "img/products/membrana-asfaltica-emapi-emacober-rollo.webp"
+            ],
+            description: "Membrana asfáltica profesional Línea Emacober de 4 mm con terminación de aluminio compuesto de máxima flexibilidad y durabilidad para impermeabilización total de techos, losas, terrazas y cubiertas expuestas.", 
+            brand: "Emapi / Megaflex", 
+            features: [
+                "Presentación: Rollo de 10 m² (1 x 10 metros)", 
+                "Espesor: 4 mm", 
+                "Terminación: Aluminio compuesto reflectivo (No Crack)", 
+                "Máxima impermeabilidad y resistencia a rayos UV", 
+                "Ideal techos de losa, chapas, terrazas y bajo teja"
+            ] 
         },
 
         // PINTURAS Y REVESTIMIENTOS
