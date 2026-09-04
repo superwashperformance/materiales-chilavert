@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? `<div class="card-img-wrapper"><img src="${prodImgSrc}" alt="${prod.name}" loading="lazy"></div>` 
                 : `<div class="card-img-placeholder"><i class="fa-solid fa-image"></i></div>`;
             const msg = encodeURIComponent(`Hola, me interesa consultar por el producto: ${prod.name}`);
-            return `
             const variantsSelectHtml = (prod.variants && prod.variants.length > 0) ? `
                 <div style="margin: 0.5rem 0 0.25rem;">
                     <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-primary); margin-bottom: 3px;">Presentación / Medida:</label>
@@ -125,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             </div>
-            `;
             `;
         }).join("");
     }

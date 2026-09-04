@@ -104,11 +104,12 @@ const catalogData = {
         { 
             id: "03050", 
             category: "aridos", 
-            name: "Bolsón de Arena de Río Limpia (1 m³)", 
+            name: "Bolsón de Arena de Río Limpia", 
             image: "img/products/bolson-arena-rio.webp", 
-            description: "Arena clasificada y lavada en bolsón big bag de 1 m³ (aprox. 1500 kg) para un acopio ordenado y sin desperdicio en obra.", 
+            description: "Arena clasificada y lavada en bolsón big bag (1 m³ o 1/2 m³) para un acopio ordenado y sin desperdicio en obra.", 
             brand: "Bolsón Big Bag", 
-            features: ["Capacidad 1 m³ (Big Bag)", "Arena limpia y lavada", "Entrega y descarga con hidrogrúa"] 
+            variants: ["1 Bolsón (1 m³)", "Medio Bolsón (1/2 m³)"],
+            features: ["Bolsón 1 m³ (aprox. 1500 kg)", "Medio Bolsón (1/2 m³)", "Arena limpia y lavada", "Entrega y descarga con hidrogrúa"] 
         },
         { 
             id: "03000", 
@@ -131,40 +132,44 @@ const catalogData = {
         { 
             id: "03310", 
             category: "aridos", 
-            name: "Piedra Partida Binder en Bolsón (1 m³ / 1/2 m³)", 
+            name: "Piedra Partida Binder en Bolsón", 
             image: "img/products/piedra-partida-binder.webp", 
             images: ["img/products/piedra-partida-binder.webp", "img/products/piedra-partida-binder-mano.webp"],
             description: "Piedra partida fina tipo binder en bolsón de 1 m³ o medio bolsón (1/2 m³) para contrapisos especiales, pavimentos y premoldeados.", 
             brand: "Bolsón Big Bag", 
+            variants: ["1 Bolsón (1 m³)", "Medio Bolsón (1/2 m³)"],
             features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Granulometría fina Binder", "Acopio limpio y sin desperdicio"] 
         },
         { 
             id: "03500", 
             category: "aridos", 
-            name: "Bolsón de Piedra Partida 6/20 (1 m³)", 
+            name: "Bolsón de Piedra Partida 6/20", 
             image: "img/products/bolson-piedra-partida-6-20.webp", 
-            description: "Piedra partida granítica 6/20 en bolsón big bag reforzado de 1 m³ (aprox. 1500 kg) para hormigón armado, losas, columnas y bases con entrega limpia en obra.", 
+            description: "Piedra partida granítica 6/20 en bolsón big bag reforzado (1 m³ o 1/2 m³) para hormigón armado, losas, columnas y bases con entrega limpia en obra.", 
             brand: "Bolsón Big Bag", 
-            features: ["Capacidad 1 m³ (Big Bag)", "Granulometría estándar 6/20", "Ideal hormigón armado y bases", "Entrega y descarga con hidrogrúa"] 
+            variants: ["1 Bolsón (1 m³)", "Medio Bolsón (1/2 m³)"],
+            features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Granulometría estándar 6/20", "Ideal hormigón armado y bases", "Entrega y descarga con hidrogrúa"] 
         },
         { 
             id: "03550", 
             category: "aridos", 
-            name: "Cascote Granza Limpio en Bolsón (1 m³ / 1/2 m³)", 
+            name: "Cascote Granza Limpio en Bolsón", 
             image: "img/products/cascote-granza.jpg", 
             images: ["img/products/cascote-granza.jpg", "img/products/cascote-granza-detalle.jpg"],
             description: "Granza de cascote triturado limpio y clasificado en bolsón de 1 m³ o medio bolsón (1/2 m³) para contrapisos alivianados y rellenos.", 
             brand: "Bolsón Big Bag", 
+            variants: ["1 Bolsón (1 m³)", "Medio Bolsón (1/2 m³)"],
             features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Limpio y libre de tierra", "Granulometría seleccionada"] 
         },
         { 
             id: "03560", 
             category: "aridos", 
-            name: "Cascote Mezcla / Picado en Bolsón (1 m³ / 1/2 m³)", 
+            name: "Cascote Mezcla / Picado en Bolsón", 
             image: "img/products/cascote-mezcla.jpg", 
             images: ["img/products/cascote-mezcla.jpg", "img/products/cascote-mezcla-detalle.webp"],
             description: "Cascote de ladrillo y revoque picado seleccionado en bolsón de 1 m³ o medio bolsón (1/2 m³) para contrapisos firmes y bases.", 
             brand: "Bolsón Big Bag", 
+            variants: ["1 Bolsón (1 m³)", "Medio Bolsón (1/2 m³)"],
             features: ["Bolsón 1 m³", "Medio Bolsón (1/2 m³)", "Ideal contrapisos de cascote", "Excelente drenaje y compactación"] 
         },
         { 
