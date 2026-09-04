@@ -26,7 +26,7 @@ const catalogData = {
             name: "Hierros y Acero", 
             image: "img/categories/cat-hierros.png", 
             icon: "fa-bars-staggered", 
-            description: "Barras ADN 420 (6mm a 25mm), mallas electrosoldadas y alambres." 
+            description: "Barras ADN 420 (6mm a 25mm), mallas electrosoldadas, hierro liso en rollo y alambres." 
         },
         { 
             id: "adhesivos", 
@@ -459,11 +459,39 @@ const catalogData = {
         { 
             id: "09050", 
             category: "hierros", 
-            name: "Alambre de Fardo Negro Recocido", 
-            image: "img/categories/cat-hierros.png", 
-            description: "Alambre negro recocido para ataduras de armaduras de hierro y encofrados.", 
-            brand: "Acindar", 
-            features: ["Por kilo o rollo", "Fácil maleabilidad", "Uso profesional en obra"] 
+            name: "Alambre Negro Recocido N°16", 
+            image: "img/products/alambre-negro-recocido-16.webp", 
+            images: [
+                "img/products/alambre-negro-recocido-16.webp", 
+                "img/products/alambre-negro-recocido-16-rollo.webp"
+            ],
+            description: "Alambre de acero dulce negro recocido calibre N°16 (Ø 1.60 mm) de máxima maleabilidad para ataduras de armaduras, estribos y encofrados.", 
+            brand: "Acindar / Acerbrag", 
+            features: [
+                "Calibre: N°16 (Diámetro Ø 1.60 mm)", 
+                "Por kilo o rollo fraccionado", 
+                "Máxima ductilidad y facilidad de atadura en obra", 
+                "Uso profesional en estructuras de hormigón armado"
+            ] 
+        },
+        { 
+            id: "09055", 
+            category: "hierros", 
+            name: "Hierro Liso en Rollo", 
+            image: "img/products/hierro-liso-rollo.webp", 
+            images: [
+                "img/products/hierro-liso-rollo.webp", 
+                "img/products/hierro-liso-rollo-plano.webp"
+            ],
+            description: "Hierro / alambre de acero liso dulce trefilado en rollos de fácil doblado y corte para armado de estribos, vigas, columnas y herrería de obra.", 
+            brand: "Acindar / Acerbrag", 
+            variants: ["Hierro Liso N°4 (Ø 4.2 mm)", "Hierro Liso N°6 (Ø 6.0 mm)"],
+            features: [
+                "Opciones de diámetro: N°4 (Ø 4.2 mm) y N°6 (Ø 6.0 mm)", 
+                "Presentación en rollos para fraccionamiento sin desperdicio", 
+                "Acero dulce de excelente maleabilidad y doblado a 90°/135°", 
+                "Ideal para confección de estribos y armaduras secundarias"
+            ] 
         },
 
         // ADHESIVOS Y PASTINAS
