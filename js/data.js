@@ -596,44 +596,49 @@ const catalogData = {
             id: "15040", 
             category: "refractarios", 
             name: "Esquinero N°11 L.Color", 
-            image: "img/products/esquinero-refractario-color.webp", 
+            image: "img/products/esquinero-n11-refractario.webp", 
             images: [
-                "img/products/esquinero-refractario-color.webp", 
-                "img/products/esquinero-refractario-color-medidas.jpg"
+                "img/products/esquinero-n11-refractario.webp", 
+                "img/products/esquinero-n11-refractario-medidas.webp"
             ],
-            description: "Esquinero refractario curvo N°11 color flameado para remates curvos y terminaciones prolijas en bordes de parrillas y hogares.", 
+            description: "Esquinero refractario curvo N°11 color flameado (220 x 110 x 60 mm, espesor 25 mm) para remates curvos y terminaciones prolijas en bordes de parrillas y hogares.", 
             brand: "Fara / Refractarios", 
             features: [
+                "Medidas: 220 mm largo x 110 mm alto x 60 mm ancho (espesor 25 mm)", 
                 "Modelo Esquinero Curvo N°11 Color (Fara)", 
                 "Terminación estética color flameado", 
                 "Borde curvo suave para cantoneras y bocas de parrilla", 
-                "Resistente a calor directo"
+                "Resistente a calor directo continuo"
             ] 
         },
         { 
             id: "15050", 
             category: "refractarios", 
             name: "1/2 Esquinero N°14 L.Color", 
-            image: "img/products/esquinero-refractario-color.webp", 
+            image: "img/products/medio-esquinero-n14-refractario.webp", 
             images: [
-                "img/products/esquinero-refractario-color.webp", 
-                "img/products/esquinero-refractario-color-medidas.jpg"
+                "img/products/medio-esquinero-n14-refractario.webp", 
+                "img/products/medio-esquinero-n14-refractario-medidas.jpg"
             ],
             description: "Medio esquinero refractario curvo N°14 color flameado con solapa (150 x 60 x 60 mm) para terminaciones y aristas precisas en parrillas.", 
             brand: "Fara / Refractarios", 
             features: [
-                "Modelo 1/2 Esquinero Curvo N°14 Color (Fara)", 
                 "Medidas: 150 mm largo x 60 mm alto x 60 mm ancho (solapa 35/25 mm)", 
+                "Modelo 1/2 Esquinero Curvo N°14 Color (Fara)", 
                 "Terminación color flameado", 
-                "Excelente terminación en aristas y esquinas"
+                "Excelente terminación en aristas y esquinas", 
+                "Apto altas temperaturas y fuego directo"
             ] 
         },
         { 
             id: "15060", 
             category: "refractarios", 
-            name: "Arcilla Refractaria en Polvo", 
-            image: "img/products/ladrillo-refractario-pila.webp", 
-            description: "Tierra / arcilla refractaria en polvo de máxima pureza para preparar morteros y mezclas de asiento resistentes al fuego directo y altas temperaturas.", 
+            name: "Arcilla Refractaria Fara", 
+            image: "img/products/arcilla-refractaria-fara.webp", 
+            images: [
+                "img/products/arcilla-refractaria-fara.webp"
+            ],
+            description: "Tierra / arcilla refractaria en polvo Fara de máxima pureza para preparar morteros y mezclas de asiento resistentes al fuego directo y altas temperaturas.", 
             brand: "Fara / Refractarios", 
             variants: ["Bolsa 30 kg", "Por Kilo (1 kg)"],
             features: [
