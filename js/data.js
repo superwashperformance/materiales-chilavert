@@ -369,6 +369,10 @@ const catalogData = {
             category: "ladrillos", 
             name: "Ladrillo Verde Césped 30 x 30 cm (Guardacésped)", 
             image: "img/products/ladrillo-guardacesped-30x30.jpg", 
+            images: [
+                "img/products/ladrillo-guardacesped-30x30.jpg", 
+                "img/products/ladrillo-guardacesped-30x30-uso.jpg"
+            ],
             description: "Bloque / ladrillo guardacésped de hormigón vibrado de 30 x 30 cm con diseño calado para el crecimiento de césped y drenaje natural. Ideal para entradas vehiculares, cocheras, jardines, senderos y estacionamientos ecológicos.", 
             brand: "Vibrado Standard", 
             features: [
