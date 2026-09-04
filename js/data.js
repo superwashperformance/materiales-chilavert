@@ -30,7 +30,7 @@ const catalogData = {
         },
         { 
             id: "adhesivos", 
-            name: "Adhesivos y Pastinas", 
+            name: "Adhesivos", 
             image: "img/categories/cat-adhesivos.jpg", 
             icon: "fa-fill-drip", 
             description: "Línea completa Perfecto Adhesivos: Impermeable, Flexible y Porcellanato." 
@@ -456,14 +456,7 @@ const catalogData = {
             brand: "Cementos Avellaneda", 
             features: ["Bolsa 30 kg", "Norma IRAM 45062 Tipo C2-L,F,H", "Especial Porcellanatos"] 
         },
-        { 
-            id: "11200", 
-            category: "adhesivos", 
-            name: "Pastina Fluida Impermeable Weber / Perfecto", 
-            description: "Mortero de rejuntado impermeable anti-hongos para juntas de pisos y azulejos de 1 a 15 mm.", 
-            brand: "Weber / Perfecto", 
-            features: ["Bolsa 1 kg / 5 kg", "Anti-hongos", "Variedad de colores"] 
-        },
+
 
         // HIDRÓFUGOS E IMPERMEABILIZANTES
         { 
