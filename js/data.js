@@ -602,16 +602,17 @@ const catalogData = {
         { 
             id: "15040", 
             category: "refractarios", 
-            name: "Esquinero N°11 L.Color", 
+            name: "Esquinero N°11 L.Color 22x11x6 cm", 
             image: "img/products/esquinero-n11-refractario.webp", 
             images: [
                 "img/products/esquinero-n11-refractario.webp", 
                 "img/products/esquinero-n11-refractario-medidas.webp"
             ],
-            description: "Esquinero refractario curvo N°11 color flameado (220 x 110 x 60 mm, espesor 25 mm) para remates curvos y terminaciones prolijas en bordes de parrillas y hogares.", 
+            description: "Esquinero refractario curvo N°11 color flameado (220 mm largo x 110 mm alto x 60 mm ancho - solapa interior 190x80 mm - espesor 25 mm) para remates curvos y terminaciones prolijas en bordes de parrillas y hogares.", 
             brand: "Fara / Refractarios", 
             features: [
                 "Medidas: 220 mm largo x 110 mm alto x 60 mm ancho (espesor 25 mm)", 
+                "Solapa interior: 190 mm x 80 mm", 
                 "Modelo Esquinero Curvo N°11 Color (Fara)", 
                 "Terminación estética color flameado", 
                 "Borde curvo suave para cantoneras y bocas de parrilla", 
@@ -621,16 +622,17 @@ const catalogData = {
         { 
             id: "15050", 
             category: "refractarios", 
-            name: "1/2 Esquinero N°14 L.Color", 
+            name: "1/2 Esquinero N°14 L.Color 15x6x6 cm", 
             image: "img/products/medio-esquinero-n14-refractario.webp", 
             images: [
                 "img/products/medio-esquinero-n14-refractario.webp", 
                 "img/products/medio-esquinero-n14-refractario-medidas.jpg"
             ],
-            description: "Medio esquinero refractario curvo N°14 color flameado con solapa (150 x 60 x 60 mm) para terminaciones y aristas precisas en parrillas.", 
+            description: "Medio esquinero refractario curvo N°14 color flameado con solapa (150 mm largo x 60 mm alto x 60 mm ancho - solapa interior 125x35 mm - espesor 25 mm) para terminaciones y aristas precisas en parrillas y chimeneas.", 
             brand: "Fara / Refractarios", 
             features: [
-                "Medidas: 150 mm largo x 60 mm alto x 60 mm ancho (solapa 35/25 mm)", 
+                "Medidas: 150 mm largo x 60 mm alto x 60 mm ancho (espesor 25 mm)", 
+                "Solapa interior: 125 mm x 35 mm", 
                 "Modelo 1/2 Esquinero Curvo N°14 Color (Fara)", 
                 "Terminación color flameado", 
                 "Excelente terminación en aristas y esquinas", 
