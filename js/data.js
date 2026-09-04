@@ -19,7 +19,7 @@ const catalogData = {
             name: "Ladrillos y Bloques", 
             image: "img/categories/cat-ladrillos.webp", 
             icon: "fa-border-all", 
-            description: "Ladrillos comunes, cerámicos huecos, portantes, tejas y bloques de hormigón." 
+            description: "Ladrillos comunes, refractarios, cerámicos huecos, portantes, tejas y bloques de hormigón." 
         },
         { 
             id: "hierros", 
@@ -222,6 +222,42 @@ const catalogData = {
             description: "Ladrillo media vista tipo Mar del Plata de excelente cocción, dureza y tonalidad rojiza pareja para muros vistos, frentes y mampostería decorativa.", 
             brand: "Mar del Plata", 
             features: ["Por unidad o pallet", "Terminación media vista", "Procedencia Mar del Plata", "Alta resistencia a la intemperie"] 
+        },
+        { 
+            id: "04200", 
+            category: "ladrillos", 
+            name: "Ladrillo Recto Refractario", 
+            image: "img/products/ladrillo-recto-refractario.webp", 
+            images: [
+                "img/products/ladrillo-recto-refractario.webp", 
+                "img/products/ladrillo-recto-refractario-medidas.jpg"
+            ],
+            description: "Ladrillo refractario recto estándar (22 x 11 x 6.3 cm) de alta resistencia térmica para la construcción y revestimiento de parrillas, hornos de barro, chimeneas, fogoneros y calderas.", 
+            brand: "Fara / Refractarios", 
+            features: [
+                "Medidas: 22 cm largo x 11 cm ancho x 6.3 cm espesor", 
+                "Soporta altas temperaturas y fuego directo", 
+                "Ideal parrillas, hornos de barro y chimeneas", 
+                "Alta resistencia mecánica y choque térmico"
+            ] 
+        },
+        { 
+            id: "04210", 
+            category: "ladrillos", 
+            name: "Listón Refractario Color", 
+            image: "img/products/liston-refractario-color.webp", 
+            images: [
+                "img/products/liston-refractario-color.webp", 
+                "img/products/liston-refractario-color-pack.webp"
+            ],
+            description: "Listón / tejuela refractaria color flameado de alta densidad para revestimiento interior y decorativo de parrillas, fogoneros, hogares y hornos a leña.", 
+            brand: "Refractarios", 
+            features: [
+                "Terminación estética color flameado / rojizo", 
+                "Resistente a altas temperaturas y fuego directo", 
+                "Ideal revestimiento de parrillas, frentes y hogares", 
+                "Excelente durabilidad y fácil colocación"
+            ] 
         },
         { 
             id: "04410", 
