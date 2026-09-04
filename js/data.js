@@ -424,11 +424,18 @@ const catalogData = {
         { 
             id: "09011", 
             category: "hierros", 
-            name: "Malla Sima Electrosoldada R-084 / Q-188", 
+            name: "Malla Sima Electrosoldada (Panel 5x2 mt)", 
             image: "img/products/malla-sima.png", 
-            description: "Malla de acero electrosoldada para losas, plateas de fundación y contrapisos armados.", 
-            brand: "Acindar", 
-            features: ["Panel 2 x 5 mts", "Malla electrosoldada", "Alta resistencia mecánica"] 
+            description: "Malla de acero electrosoldada ADN 420 en paneles de 5 x 2 metros (10 m²) para armaduras de contrapisos, losas, plateas de fundación y pavimentos.", 
+            brand: "Acindar / Sima", 
+            variants: ["Malla R-084 (15x25 cm - Ø 4,2 mm)", "Malla Q-158 (15x15 cm - Ø 6 mm)"],
+            features: [
+                "Panel estándar: 5.00 x 2.00 metros (10 m²)", 
+                "Malla R-084: Cuadrícula 15x25 cm - Alambre Ø 4,2 mm", 
+                "Malla Q-158: Cuadrícula 15x15 cm - Alambre Ø 6 mm", 
+                "Acero conformado ADN 420 electrosoldado de alta resistencia",
+                "Ideal para losas, contrapisos armados, plateas y pavimentos"
+            ] 
         },
         { 
             id: "09050", 
