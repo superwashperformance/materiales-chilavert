@@ -19,7 +19,7 @@ const catalogData = {
             name: "Ladrillos y Bloques", 
             image: "img/categories/cat-ladrillos.webp", 
             icon: "fa-border-all", 
-            description: "Ladrillos comunes, refractarios, cerámicos huecos, portantes, tejas y bloques de hormigón." 
+            description: "Ladrillos comunes, de campo, cerámicos huecos, portantes, tejas y bloques de hormigón." 
         },
         { 
             id: "hierros", 
@@ -48,6 +48,13 @@ const catalogData = {
             image: "img/categories/cat-pinturas.jpg", 
             icon: "fa-paint-roller", 
             description: "Línea Weberpint Látex Exterior-Interior (4kg, 10kg, 20L), fijadores y selladores." 
+        },
+        { 
+            id: "refractarios", 
+            name: "Refractarios y Baldosones", 
+            image: "img/categories/cat-refractarios.webp", 
+            icon: "fa-fire-burner", 
+            description: "Ladrillos rectos N°1, tejuelas N°5, listones N°9, esquineros N°11, 1/2 esquineros N°14 y arcilla refractaria." 
         }
     ],
 
@@ -222,42 +229,6 @@ const catalogData = {
             description: "Ladrillo media vista tipo Mar del Plata de excelente cocción, dureza y tonalidad rojiza pareja para muros vistos, frentes y mampostería decorativa.", 
             brand: "Mar del Plata", 
             features: ["Por unidad o pallet", "Terminación media vista", "Procedencia Mar del Plata", "Alta resistencia a la intemperie"] 
-        },
-        { 
-            id: "04200", 
-            category: "ladrillos", 
-            name: "Ladrillo Recto Refractario", 
-            image: "img/products/ladrillo-recto-refractario.webp", 
-            images: [
-                "img/products/ladrillo-recto-refractario.webp", 
-                "img/products/ladrillo-recto-refractario-medidas.jpg"
-            ],
-            description: "Ladrillo refractario recto estándar (22 x 11 x 6.3 cm) de alta resistencia térmica para la construcción y revestimiento de parrillas, hornos de barro, chimeneas, fogoneros y calderas.", 
-            brand: "Fara / Refractarios", 
-            features: [
-                "Medidas: 22 cm largo x 11 cm ancho x 6.3 cm espesor", 
-                "Soporta altas temperaturas y fuego directo", 
-                "Ideal parrillas, hornos de barro y chimeneas", 
-                "Alta resistencia mecánica y choque térmico"
-            ] 
-        },
-        { 
-            id: "04210", 
-            category: "ladrillos", 
-            name: "Listón Refractario Color", 
-            image: "img/products/liston-refractario-color.webp", 
-            images: [
-                "img/products/liston-refractario-color.webp", 
-                "img/products/liston-refractario-color-pack.webp"
-            ],
-            description: "Listón / tejuela refractaria color flameado de alta densidad para revestimiento interior y decorativo de parrillas, fogoneros, hogares y hornos a leña.", 
-            brand: "Refractarios", 
-            features: [
-                "Terminación estética color flameado / rojizo", 
-                "Resistente a altas temperaturas y fuego directo", 
-                "Ideal revestimiento de parrillas, frentes y hogares", 
-                "Excelente durabilidad y fácil colocación"
-            ] 
         },
         { 
             id: "04410", 
@@ -564,6 +535,114 @@ const catalogData = {
             variants: ["4 Litros", "10 Litros", "20 Litros"],
             features: ["Presentaciones: 4 L, 10 L y 20 L", "Exterior e Interior", "Excelente poder cubritivo y lavable", "Anti-hongos"] 
         },
+
+        // REFRACTARIOS - BALDOSONES
+        { 
+            id: "15010", 
+            category: "refractarios", 
+            name: "Ladrillo Recto N°1 Sin Color 11x22x6 cm", 
+            image: "img/products/ladrillo-recto-refractario.webp", 
+            images: [
+                "img/products/ladrillo-recto-refractario.webp", 
+                "img/products/ladrillo-recto-refractario-medidas.jpg",
+                "img/products/ladrillo-refractario-pila.webp"
+            ],
+            description: "Ladrillo refractario recto estándar N°1 sin color (11 x 22 x 6 cm) de alta resistencia térmica para la construcción y revestimiento de parrillas, hornos de barro, chimeneas, fogoneros y calderas.", 
+            brand: "Fara / Refractarios", 
+            features: [
+                "Medidas: 11 cm ancho x 22 cm largo x 6 cm espesor", 
+                "Modelo Recto N°1 Sin Color (Fara)", 
+                "Soporta altas temperaturas y fuego directo continuo", 
+                "Ideal para parrillas, hornos de barro y chimeneas"
+            ] 
+        },
+        { 
+            id: "15020", 
+            category: "refractarios", 
+            name: "Tejuela N°5 L.Color 22x11x2 cm", 
+            image: "img/products/tejuela-refractaria-fara-5-color.webp", 
+            images: [
+                "img/products/tejuela-refractaria-fara-5-color.webp", 
+                "img/products/tejuela-refractaria-fara-5-color-plana.webp"
+            ],
+            description: "Tejuela refractaria N°5 color flameado (22 x 11 x 2 cm) para revestimiento térmico y estético de parrillas, fogoneros y hogares a leña.", 
+            brand: "Fara / Refractarios", 
+            features: [
+                "Medidas: 22 cm largo x 11 cm ancho x 2 cm espesor", 
+                "Modelo Tejuela N°5 Color (Fara)", 
+                "Terminación estética color flameado rojizo", 
+                "Resistente al fuego directo y bajas pérdidas térmicas"
+            ] 
+        },
+        { 
+            id: "15030", 
+            category: "refractarios", 
+            name: "Listón N°9 L.Color 22x6x2 cm", 
+            image: "img/products/liston-refractario-color.webp", 
+            images: [
+                "img/products/liston-refractario-color.webp", 
+                "img/products/liston-refractario-color-pack.webp"
+            ],
+            description: "Listón refractario N°9 color flameado (22 x 6 x 2 cm) de diseño esbelto para colocación trabada o espina de pescado en pisos y paredes de parrillas.", 
+            brand: "Fara / Refractarios", 
+            features: [
+                "Medidas: 22 cm largo x 6 cm ancho x 2 cm espesor", 
+                "Modelo Listón N°9 Color (Fara)", 
+                "Terminación color flameado", 
+                "Apto colocación en pisos y paredes sometidos a calor"
+            ] 
+        },
+        { 
+            id: "15040", 
+            category: "refractarios", 
+            name: "Esquinero N°11 L.Color", 
+            image: "img/products/esquinero-refractario-color.webp", 
+            images: [
+                "img/products/esquinero-refractario-color.webp", 
+                "img/products/esquinero-refractario-color-medidas.jpg"
+            ],
+            description: "Esquinero refractario curvo N°11 color flameado para remates curvos y terminaciones prolijas en bordes de parrillas y hogares.", 
+            brand: "Fara / Refractarios", 
+            features: [
+                "Modelo Esquinero Curvo N°11 Color (Fara)", 
+                "Terminación estética color flameado", 
+                "Borde curvo suave para cantoneras y bocas de parrilla", 
+                "Resistente a calor directo"
+            ] 
+        },
+        { 
+            id: "15050", 
+            category: "refractarios", 
+            name: "1/2 Esquinero N°14 L.Color", 
+            image: "img/products/esquinero-refractario-color.webp", 
+            images: [
+                "img/products/esquinero-refractario-color.webp", 
+                "img/products/esquinero-refractario-color-medidas.jpg"
+            ],
+            description: "Medio esquinero refractario curvo N°14 color flameado con solapa (150 x 60 x 60 mm) para terminaciones y aristas precisas en parrillas.", 
+            brand: "Fara / Refractarios", 
+            features: [
+                "Modelo 1/2 Esquinero Curvo N°14 Color (Fara)", 
+                "Medidas: 150 mm largo x 60 mm alto x 60 mm ancho (solapa 35/25 mm)", 
+                "Terminación color flameado", 
+                "Excelente terminación en aristas y esquinas"
+            ] 
+        },
+        { 
+            id: "15060", 
+            category: "refractarios", 
+            name: "Arcilla Refractaria en Polvo", 
+            image: "img/products/ladrillo-refractario-pila.webp", 
+            description: "Tierra / arcilla refractaria en polvo de máxima pureza para preparar morteros y mezclas de asiento resistentes al fuego directo y altas temperaturas.", 
+            brand: "Fara / Refractarios", 
+            variants: ["Bolsa 30 kg", "Por Kilo (1 kg)"],
+            features: [
+                "Presentaciones: Bolsa cerrada de 30 kg o Fraccionado por Kilo", 
+                "Polvo ligante refractario para morteros de alta temperatura", 
+                "Resistente al fuego directo continuo", 
+                "Indispensable para asentar tejuelas y ladrillos refractarios"
+            ] 
+        }
 
     ]
 };
