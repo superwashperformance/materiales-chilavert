@@ -640,7 +640,7 @@ const catalogData = {
         { 
             id: "15060", 
             category: "refractarios", 
-            name: "Arcilla Refractaria Fara", 
+            name: "Arcilla Refractaria en Polvo", 
             image: "img/products/arcilla-refractaria-fara.webp", 
             images: [
                 "img/products/arcilla-refractaria-fara.webp"
