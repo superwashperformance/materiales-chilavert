@@ -364,6 +364,21 @@ const catalogData = {
             brand: "Vibrado Símil Piedra", 
             features: ["Medida 13x20x40 cm", "Terminación rústica símil piedra", "Ideal muros vistos y frentes", "Rendimiento 12.5 u/m²"] 
         },
+        { 
+            id: "06030", 
+            category: "ladrillos", 
+            name: "Ladrillo Verde Césped 30 x 30 cm (Guardacésped)", 
+            image: "img/products/ladrillo-guardacesped-30x30.jpg", 
+            description: "Bloque / ladrillo guardacésped de hormigón vibrado de 30 x 30 cm con diseño calado para el crecimiento de césped y drenaje natural. Ideal para entradas vehiculares, cocheras, jardines, senderos y estacionamientos ecológicos.", 
+            brand: "Vibrado Standard", 
+            features: [
+                "Medidas: 30 x 30 cm", 
+                "Permite el crecimiento de césped y drenaje natural de lluvia", 
+                "Apto tránsito vehicular liviano, cocheras y senderos peatonales", 
+                "Hormigón vibrado de alta resistencia y durabilidad", 
+                "Rendimiento: ~11 unidades por m²"
+            ] 
+        },
 
         // HIERROS Y ACERO
         { 
@@ -602,40 +617,44 @@ const catalogData = {
         { 
             id: "15040", 
             category: "refractarios", 
-            name: "Esquinero N°11 L.Color 22x11x6 cm", 
+            name: "Esquinero Refractario (Línea Color N°11)", 
             image: "img/products/esquinero-n11-refractario.webp", 
             images: [
                 "img/products/esquinero-n11-refractario.webp", 
                 "img/products/esquinero-n11-refractario-medidas.webp"
             ],
-            description: "Esquinero refractario curvo N°11 color flameado (220 mm largo x 110 mm alto x 60 mm ancho - solapa interior 190x80 mm - espesor 25 mm) para remates curvos y terminaciones prolijas en bordes de parrillas y hogares.", 
+            description: "Es la pieza de tamaño completo diseñada para proteger y dar una terminación prolija (con canto redondeado) a las esquinas y aberturas expuestas a altas temperaturas.", 
             brand: "Fara / Refractarios", 
             features: [
-                "Medidas: 220 mm largo x 110 mm alto x 60 mm ancho (espesor 25 mm)", 
+                "Largo: 220 mm (22 cm)", 
+                "Ancho: 60 mm (6 cm)", 
+                "Altura / Ala interna: 110 mm (11 cm)", 
+                "Espesor: 25 mm (2.5 cm)", 
                 "Solapa interior: 190 mm x 80 mm", 
-                "Modelo Esquinero Curvo N°11 Color (Fara)", 
-                "Terminación estética color flameado", 
-                "Borde curvo suave para cantoneras y bocas de parrilla", 
-                "Resistente a calor directo continuo"
+                "Rendimiento: ~16 unidades por metro lineal", 
+                "Terminación estética color flameado con canto redondeado", 
+                "Resistente a altas temperaturas y fuego directo continuo"
             ] 
         },
         { 
             id: "15050", 
             category: "refractarios", 
-            name: "1/2 Esquinero N°14 L.Color 15x6x6 cm", 
+            name: "Medio Esquinero Refractario (Línea Color N°14)", 
             image: "img/products/medio-esquinero-n14-refractario.webp", 
             images: [
                 "img/products/medio-esquinero-n14-refractario.webp", 
                 "img/products/medio-esquinero-n14-refractario-medidas.jpg"
             ],
-            description: "Medio esquinero refractario curvo N°14 color flameado con solapa (150 mm largo x 60 mm alto x 60 mm ancho - solapa interior 125x35 mm - espesor 25 mm) para terminaciones y aristas precisas en parrillas y chimeneas.", 
+            description: "Es una pieza complementaria más corta, ideal para resolver los ángulos de 90 grados trabando el revestimiento sin necesidad de realizar cortes manuales en la obra.", 
             brand: "Fara / Refractarios", 
             features: [
-                "Medidas: 150 mm largo x 60 mm alto x 60 mm ancho (espesor 25 mm)", 
+                "Largo: 150 mm (15 cm)", 
+                "Ancho: 60 mm (6 cm)", 
+                "Altura / Ala interna: 60 mm (6 cm)", 
+                "Espesor: 25 mm (2.5 cm)", 
                 "Solapa interior: 125 mm x 35 mm", 
-                "Modelo 1/2 Esquinero Curvo N°14 Color (Fara)", 
-                "Terminación color flameado", 
-                "Excelente terminación en aristas y esquinas", 
+                "Rendimiento: ~16 unidades por metro lineal (según disposición de traba)", 
+                "Terminación estética color flameado", 
                 "Apto altas temperaturas y fuego directo"
             ] 
         },
