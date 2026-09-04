@@ -51,7 +51,7 @@ const catalogData = {
         },
         { 
             id: "refractarios", 
-            name: "Refractarios y Baldosones", 
+            name: "Refractarios", 
             image: "img/categories/cat-refractarios.webp", 
             icon: "fa-fire-burner", 
             description: "Ladrillos rectos N°1, tejuelas N°5, listones N°9, esquineros N°11, 1/2 esquineros N°14 y arcilla refractaria." 
@@ -562,7 +562,7 @@ const catalogData = {
             features: ["Presentaciones: 4 L, 10 L y 20 L", "Exterior e Interior", "Excelente poder cubritivo y lavable", "Anti-hongos"] 
         },
 
-        // REFRACTARIOS - BALDOSONES
+        // REFRACTARIOS
         { 
             id: "15010", 
             category: "refractarios", 
