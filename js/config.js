@@ -54,10 +54,12 @@ const siteConfig = {
         },
         { 
             name: "Acindar", 
+            logo: "img/brands/logo-acindar.webp", 
             desc: "Hierros ADN 420 y Mallas Sima" 
         },
         { 
             name: "Megaflex", 
+            logo: "img/brands/logo-megaflex.webp", 
             desc: "Membranas Asfálticas e Impermeabilizantes" 
         }
     ],
